@@ -1,0 +1,176 @@
+Ofte komilering
+npm install app
+npm install
+node app.js
+
+Server port 27017....
+Starte server
+cmd
+cd C:\Program Files\MongoDB\Server\3.0\bin
+mongod.exe --httpinterface
+  hvis ikke httpinterface fikk melding når http://localhost:27017/login  
+  eller at du ikke har starte node app.js
+   :It looks like you are trying to access MongoDB over HTTP on the native driver port.
+
+Starte klient
+cmd
+cd C:\nbh
+npm install app
+npm install
+node app.js
+
+http://localhost:27017/login   
+
+Lese i databasen 
+cmd
+cd C:\Program Files\MongoDB\Server\3.0\bin
+mongo.exe
+Vise databaser og collections
+show dbs
+show collections
+
+Kompilering
+Første gang se Frode.todoMå legge inn var crm = {} ...osv
+  db.crm.drop(); 
+db.crm.insert(crm);                 
+db.crm.clients.ensureIndex( {psi_id : 1 }, { unique: true } )
+ db.crm.getIndexes()
+db.crm.findOne()           
+db.crm.find({},{clients:1}).pretty()  
+ 
+Har lagti inn users men må kjøre
+http://localhost:27017/signup   
+  før man komemr inn i basen
+deretter
+http://localhost:27017/login   
+
+Kjøre programmet ....
+cmd
+cd C:\2015-18-mai\nbh\collectShow funger ikke
+
+cd C:\test er ok
+node app.js
+Kompilering osv
+npm install
+npm istall express
+Endret i 
+C:\2015-18-mai\nbh\collectShow\node_modules\mongodb\node_modules\mongodb-core\node_modules\bson\node_modules\bson-ext\ext\index.js
+C:\2015-18-mai\nbh\collectShow\node_modules\mongoose\node_modules\bson\node_modules\bson-ext\ext\index.js
+alle steder hvor  // bson = require('../build/Release/bson');  
+	   til bson = require('bson');
+	   
+Endret i app.js
+La til
+var  express = require('express')
+  ,cookieParser = require('cookie-parser')
+  ,bodyParser = require('body-parser')
+  , app = express() // Web framework to handle routing requests
+
+...    app.use(cookieParser());
+...   app.use(bodyParser());
+	   
+npm install cookie-parser
+npm install body-parser
+
+....sjekker
+ny vesrjon av express laster ikke med middelware ,se i app.js hvem vi briuker
+http://webapplog.com/migrating-express-js-3-x-to-4-x-middleware-route-and-other-changes/
+npm install body-parser
+npm install cookie-parser
+
+
+migrate exprss 3 til 4 masse å gjøre http://webapplog.com/migrating-express-js-3-x-to-4-x-middleware-route-and-other-changes/
+...
+
+
+
+Først endre port i app.js til 27017
+npm install app
+
+node app.js 
+
+På browseren
+http://localhost:27017/login
+
+
+Dette måtte gjøres i forkant
+--------------------------------
+https://www.python.org/downloads/
+Next, set the system’s PATH variable to include directories that include Python components and packages we’ll add later. To do this:
+
+Open the Control Panel (you can find it using Search on the Charms Bar).
+In the Control Panel, search for and open System.
+In the dialog box, select Advanced System Settings.
+In the next dialog, select Environment Variables.
+In the User Variables section, edit the PATH statement to include this (if there is no PATH variable, click NEW to create one):
+C:\Python34;C:\Python34\Lib\site-packages\;C:\Python34\Scripts\;
+
+
+
+cmd
+cd C:\2015-18-mai\nbh\collectShow
+npm install 
+resultat
+npm WARN package.json solveig@1.0.0 No repository field.
+
+C:\2015-18-mai\nbh\collectShow>type package.json
+{
+  "name": "solveig",
+  "version": "1.0.0",
+  "description": "NBH",
+  "main": ".mongorc.js",
+
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "consolidate": "^0.13.1",
+    "express": "^4.12.4",
+    "mongodb": "^2.0.33",
+    "node": "0.0.0",
+    "swig": "^1.4.2",
+    "validator": "^3.40.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Solveig L+©vhaug",
+  "license": "ISC"
+}
+Feilmeldingen: kunne ha sattt
+"repository" : { 
+   "type" : "git",
+   "url" : "http://github.com/npm/npm.git"
+ }
+ eller
+   "private":true,
+ 
+... Siden sist jeg kjørte har de kommet med
+node-gyp
+Node.js native addon build tool 
+....
+It looks like there's either a problem with your Visual Studio installation, or you're using a
+ version of Visual Studio that doesn't work with one or both of node-gyp or node-pre-gyp. 
+ If you're using Visual Studio Express, make sure it's VSE 2013 and not VSE 2010.
+
+As these are issues with tools used by mongodb, and don't have anything to do with npm itself, 
+I'm going to close this. Good luck getting this sorted out! Getting started with Node native modules on 
+Windows is definitely harder than it needs to be!
+Solveig : Jeg laster ned Visual Studio Express, make sure it's VSE 2013
+
+
+...
+
+
+......
+
+
+
+**********
+Lage bruker
+db.addUser("x","pass")
+Lage database , fins den ikke fra før blir den laget
+use xxx 
+
+fjerne database
+db.dropDatabase()
+

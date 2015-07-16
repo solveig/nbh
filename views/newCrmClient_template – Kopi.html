@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset="UTF-8">    
+<title>{{title}}</title>
+<link rel='stylesheet' href='href/reset.css'>
+
+
+<script>
+    var ny                = new Array('Velg','utredning','henlagt','kommentar'); // last indicate if comment is required
+    var iBehandling       = new Array('Velg','avsluttBehandling','kommentar','');
+    var iVedlikehold      = new Array('Velg','avsluttVedlikehold','kommentar','');
+    var id_ind            = 0;
+    var iKommentar        = new Array('Velg','kommentar','');
+    var valg              = "begin";
+   
+    
+    function init() {      
+        valgtUtredning = document.querySelector("#valgtUtredning");
+        valgtHenlagt = document.querySelector("#valgtHenlagt");
+        valgtKommentar = document.querySelector("#valgtKommentar");
+        valgtVedlikehold = document.querySelector("#valgtVedlikehold");
+        valgtBehandling = document.querySelector("#valgtBehandling");
+        //form.reset(); det er ved piltast tilbake id står
+    }
+       
+ 
+    function setOptionText(ExSelect, theArray) {
+      for (loop = 0; loop < theArray.length  ; loop++) {       	 
+          ExSelect.options[loop].text = theArray[loop];
+      }
+    }                             
+    
+   	function swapOpts(psi_id,ArrayName) {
+       var ExSelect = document.theForm.status;
+       var theArray = eval(ArrayName);
+       setOptionText(ExSelect, theArray);      
+       document.querySelector('#xx').innerHTML = '<input type=hidden name=\"psiNy\" value='+psi_id+'>';
+       id_ind = psi_id;
+     }
+ 
+    function showMe(valgt) {   
+    	   valgtUtredning.className   = "hidden";
+         valgtHenlagt.className     = "hidden";
+         valgtKommentar.className   = "hidden";           
+         valgtVedlikehold.className = "hidden";
+         valgtBehandling.className  = "hidden";
+         treatDiv.className         = "hidden";
+         recDiv.className           = "hidden";
+          	
+        switch (valgt) {
+        case 'utredning' :
+            valgtUtredning.className = "visible";
+            setRequired("valgtUtredning");
+            break;
+            
+        case 'henlagt' :
+            valgtHenlagt.className   = "visible";
+            setRequired("valgtHenlagt");
+            break;
+        case 'kommentar' :	
+            valgtKommentar.className = "visible";
+            setRequired("valgtKommentar");
+            break;
+        case 'avsluttBehandling' :	
+            valgtBehandling.className = "visible";
+            setRequired("valgtBehandling");
+            break;
+        case 'avsluttVedlikehold' :	
+            valgtVedlikehold.className = "visible";
+            setRequired("valgtVedlikehold");
+            break;
+        default : alert('error in showMe' + valgt);    
+        }           
+        valg = valgt;
+    }
+   
+    function setRequired(denne) {    	
+        var pone,pone2,pone3;
+                                                                         
+        switch (denne) {
+        case 'valgtEkskludert' : 
+            pone = document.querySelector('#treatStartDate'); 
+            pone.required = false;
+            break;
+        case 'valgtInkludert'  : 
+            pone = document.querySelector('#treatExclDate'); 
+            pone.required = false;
+            pone2 = document.querySelector('#treatExcl'); 
+            pone2.required = false;
+            pone3 = document.querySelector('#treatExclMeaus'); 
+            pone3.required = false;
+            break;
+      
+        case 'sykDiv' :           
+            pone = document.querySelector('#recoveredDate'); 
+            pone.required = false;          
+            break;
+       case 'friskDiv' : 
+              break;
+       case 'iVedDiv' : 
+            pone = document.querySelector('#treatExclB');        
+            pone.required = false;
+            pone2 = document.querySelector('#treatExclMeausB'); 
+            pone2.required = false;
+            break;
+       
+        default :            
+            var p1 = document.querySelectorAll( '#' + denne+ ' textarea ,#' + denne + ' input[type=date]' +',#' + denne + ' input[type=number]');      
+            var p2 = document.querySelectorAll('textarea ,input' );                     
+            for ( var i = 0; i < p2.length; i++ ) {
+                //p2[i].style.backgroundColor = "blue";
+                p2[i].required = false;
+            }       
+            var ss = '#' + denne+ ' textarea ,#' + denne + ' input' ; 
+            //alert(ss);
+            var p1 = document.querySelectorAll( '#' + denne+ ' textarea ,#' + denne + ' input[type=date]' +',#' + denne + ' input[type=number]');              
+            for ( var i = 0; i < p1.length; i++ ) {                 
+                if ((p1[i].id=='notes') == false) 
+                {
+                    p1[i].required = true;     
+                    //p1[i].style.backgroundColor = "red";                   
+                }
+            }
+        }
+    }
+ //      <li   class="button1"><a  href="#" onclick="arkiverte();return false;">{{crmC.arkiverte_txt}}</a></li>
+  
+
+
+</script>
+</head>
+ 	
+<body onload="init();"> 
+
+  {% if {{crm.username}} %}
+  
+  <section>
+  
+  <header>
+  <nav>
+        <h1><img class="logo" src="img/nbhTextLogo.svg" alt="logo til Ny blå himmel" /></h1>      
+        {% else %}
+        {{crmC.notlogged_in}}      <a href="/login">{{crmC.login}}</a> 
+        {% endif %}
+        <ul>     
+        {% if {{crm.username}} == "solveig" %}	
+        <li class="button1"><a href="/signup">{{crmC.signup}}</a></li>
+        <li  class="button1"><a href="/overview">{{crmC.overview}}</a></li>
+        {% endif %}
+        <li   class="button1"><a  href="/newCrmClient" >{{crmC.registration_txt}}</a></li>        
+        <li   class="button1"><a  href="/arkiverte" >{{crmC.arkiverte_txt}}</a></li>
+        <li   class="button1"><a  href="/" onclick='alert("Velg PSI-ID nr og kommentar i Status feltet");'>{{crmC.kommentar_txt}}</a></li>
+          <li   class="button1"><a  href="/logout">{{crmC.logout}} </a></li>
+        
+     </ul>   
+   
+  </nav>
+  </header>   
+     <form name="theForm"  action="/newCrmClient" method="POST">    
+        <fieldset>
+        
+           <legend>{{crmC.title}}{{crmC.user_more_txt}} {{crm.username}}</legend> 
+    	     <label> {{crmC.id_txt}}</label>
+    	     <select class="box1"  name="psi_id"  autofocus required onchange="swapOpts(this.options[selectedIndex].text,this.options[selectedIndex].value);">
+    		      <option>{{crmC.choose}}</option>
+              {% for cli in crm.client %}
+                 {% if {{crm.username}} == {{cli.contact}} and {{cli.status}} in {{crm.showUp}}%}    
+                        <option id ="pid" value="{{cli.status}}">{{cli.psi_id}} </option>                     
+                  {% endif %}
+              {% endfor %}
+           </select> 
+    
+        
+          
+           <label>{{crmC.status_txt}} </label>
+           <select class="box2" name="status" required onchange="showMe(this.options[selectedIndex].text)"> 
+         	    <option >{{crmC.choose_txt}}</option>  
+        	    <option ></option>  
+        	    <option ></option>  
+        	    <option ></option>  
+           </select>	
+           <p id="xx"></p>
+           {% for cli in crm.client %}          
+             {% if id_ind == {{cli.psi_id}} %}   
+                  <input type=hidden name="freshDate" value={{cli.freshDate}}>                   
+                          
+             {% endif %}
+           {% endfor %}
+           
+           <div id="valgtUtredning" class="hidden">
+              <input type = "radio" name = "statusNew" id = "ekskludert" value = "ekskludert"  onClick='setRequired("valgtEkskludert")' />
+              <label for  = "ekskludert">{{crmC.exclude_txt}}</label>
+              <input type = "radio" name = "statusNew" id = "inkludert" value = "iBehandling"  onClick='setRequired("valgtInkludert")'/>
+              <label for = "inkludert">{{crmC.include_txt}}</label>
+             <label for = "studyHours"> {{crmC.studyHours_txt}} </label>  
+              <input type="number" id="studyHours" name="studyHours" min=1 max=2 >     
+              <div class= "blokk">
+               	  <label>{{crmC.studyDate_txt}}</label> 
+               	  <input type="date" id="studyDate" name="studyDate"    >
+              </div>     
+     
+               <div class= "blokk">
+                  <label for = "assummed">{{crmC.assummed_txt}}</label>
+                  <input type="checkbox" id="assummed"  name ="assA"  value="X">   
+                  <label for  = "assummed">{{crmC.assummed_a}}</label>
+                  <input type="checkbox" id="assummed"  name ="assB"  value="X">   
+                  <label for  = "assummed">{{crmC.assummed_b}}</label>
+                  <input type="checkbox" id="assummed"  name ="assC"  value="X">   
+                  <label for  = "assummed">{{crmC.assummed_c}}</label>
+              </div>               
+              <div class= "blokk">
+                  <label for = "considerations">{{crmC.considerations_txt}}</label>
+                  <textarea id="considerations"  name ="considerations" ></textarea>   
+              </div>               
+              <div class= "blokk">
+                  <label for = "employer">{{crmC.employer_txt}}</label>
+                  <textarea class = "minst" id="employer"  name ="employer" ></textarea>   
+              </div>                           
+              <div class= "blokk">
+                  <label for = "notes">{{crmC.notes_txt}}</label>
+                  <textarea id="notes"  name ="notes" ></textarea>    
+              </div>  
+              <div class= "blokk">
+                  <label for = "icd">{{crmC.icd_txt}}</label>
+                  <textarea class = "minst" id="icd"  name ="icd" ></textarea>    
+              </div>  
+               
+              <div id="ekskludertDiv" class="hidden">
+                  <div class= "blokk">
+                      <label for = "treatExcl">{{crmC.treatExcl_txt}}</label>
+                      <textarea id="treatExcl" name ="treatExcl" ></textarea>
+                  </div>  
+                  <div class= "blokk">
+                      <label for = "treatExclMeaus">{{crmC.treatExclMeaus_txt}}</label>
+                      <textarea id="treatExclMeaus"  name ="treatExclMeaus" ></textarea>   
+                  </div>     
+                  <div class= "blokk">
+                      <label>{{crmC.treatExclDate_txt}}</label> 
+                      <input type="date" id="treatExclDate"  name="treatExclDate"  >
+                  </div>   
+              </div>               
+              <div id="inkludertDiv" class="hidden">
+                  <div class= "blokk">
+                      <label>{{crmC.treatStartDate_txt}}</label> 
+                      <input type="date" id="treatStartDate"  name="treatStartDate"  >
+                  </div>                    
+              </div>  
+             </div>    
+           
+           <div id="plass">
+               <div id="valgtHenlagt" class="hidden">     
+               	 
+                   <div class= "blokk">
+                 	     <label for = "notes">{{crmC.notes_txt}}</label>
+                       <textarea id="notes"  name ="notes" ></textarea>    
+                   </div>    
+                   <label for="dismissedDate">{{crmC.dismissDate_txt}}</label>   
+                   <input type="date" id="dismissedDate" name="dismissedDate" >
+               </div>
+           </div>      
+           <div id="plass">
+           	 
+               <div id="valgtKommentar" class="hidden">       
+                   <label for = "notes">{{crmC.notes_txt}}</label>
+                   <textarea id="notes"  name ="notes" ></textarea>             
+                   <label for="notesDate">{{crmC.notesDate_txt}}</label>   
+                   <input type="date" id="notesDate" name="notesDate"   value={{notesDate}}>
+             </div>
+           </div>
+                                      
+           <div id="valgtBehandling" class="hidden">
+               <input type = "radio" name = "statusNew" id = "syk" value = "syk"  onClick='setRequired("sykDiv")' />
+               <label for = "syk">{{crmC.sick_txt}}</label>
+               <input type = "radio" name = "statusNew" id = "vedlikehold" value = "iVedlikehold"  onClick='setRequired("iVedDiv")'/>
+               <label for  = "vedlikehold">{{crmC.needMaint_txt}}</label>
+               <input type = "radio" name = "statusNew" id = "frisk" value = "frisk"  onClick='setRequired("friskDiv")'/>
+               <label for  = "frisk">{{crmC.fresh_txt}}</label>
+               
+         
+               <div class= "blokk">
+                  <label for = "assummed">{{crmC.assummed_txt}}</label>
+                  <input type="checkbox" id="assummed"  name ="assA"  value="X">   
+                  <label for  = "assummed">{{crmC.assummed_a}}</label>
+                  <input type="checkbox" id="assummed"  name ="assB"  value="X">   
+                  <label for  = "assummed">{{crmC.assummed_b}}</label>
+                  <input type="checkbox" id="assummed"  name ="assC"  value="X">   
+                  <label for  = "assummed">{{crmC.assummed_c}}</label>
+              </div>               
+              <div class= "blokk">
+                  <label for = "considerations">{{crmC.considerations_txt}}</label>
+                  <textarea id="considerations"  name ="considerations" ></textarea>   
+              </div>               
+              <div class= "blokk">
+                  <label for = "employer">{{crmC.employer_txt}}</label>
+                  <textarea class = "minst" id="employer"  name ="employer" ></textarea>   
+              </div>                           
+              <div class= "blokk">
+                  <label for = "notes">{{crmC.notes_txt}}</label>
+                  <textarea class = "mindre" id="notes"  name ="notes" ></textarea>    
+              </div>  
+              <div class= "blokk">
+                  <label for = "icd">{{crmC.icd_txt}}</label>
+                  <textarea class = "minst" id="icd"  name ="icd" ></textarea>    
+              </div>  
+              
+              <label for = "treatHours"> {{crmC.treatHours_txt}} </label>  
+              <input type="number" id="treatHours" name="treatHours" min=1 max=15  >     
+              
+              <div class= "blokk">
+               	  <label>{{crmC.treatEndDate_txt}}</label> 
+               	  <input type="date" id="treatEndDate" name="treatEndDate"    >
+              </div>     
+              
+              <div id="treatDiv" class="hidden">
+                  <div class= "blokk">
+                      <label for = "treatExclB">{{crmC.treatExcl_txt}}</label>
+                      <textarea id="treatExclB" name ="treatExclB" ></textarea>
+                  </div>  
+                  <div class= "blokk">
+                      <label for = "treatExclMeausB">{{crmC.treatExclMeaus_txt}}</label>
+                      <textarea id="treatExclMeausB"  name ="treatExclMeausB" ></textarea>   
+                  </div>                    
+              </div>               
+              <div id="recDiv" class="hidden">                             
+                <div class= "blokk">
+                      <label>{{crmC.recoveredDate_txt}}</label> 
+                      <input type="date" id="recoveredDate"  name="recoveredDate"  >
+                  </div>                    
+
+              </div>
+           </div>
+           
+           <div id="valgtVedlikehold" class="hidden">
+               <div class= "blokk">
+                   <label for = "maintNotes">{{crmC.maintNotes_txt}}</label>
+                   <textarea  id="maintNotes"  name ="maintNotes" ></textarea>   
+               </div>                           
+               <div class= "blokk">
+                   <label for = "notes">{{crmC.notes_txt}}</label>
+                   <textarea id="notes"  name ="notes" ></textarea>    
+               </div>  
+               <label for = "maintHours"> {{crmC.maintHours_txt}} </label>  
+               <input type="number" id="maintHours" name="maintHours" min=0 max=6 >     
+               <div class= "blokk">
+                   <label>{{crmC.maintStartDate_txt}}</label> 
+               	   <input type="date" id="maintStartDate" name="maintStartDate"    >
+               </div>                          
+               <div class= "blokk">
+                   <label>{{crmC.maintEndDate_txt}}</label> 
+               	   <input type="date" id="maintEndDate" name="maintEndDate"    >
+               </div>                          
+           </div>  
+               
+           <input type="hidden" name="signature" value="{{crm.signature}}">
+           <input  type="reset" value="Reset" />
+                     
+           <input  type="submit" name = "submit1" value="Lagre/Print"  />    
+           <div class="field" onmouseout="document.getElementById('hint').style.display='none';"
+           	                  onmouseover="document.getElementById('hint').style.display='block';" >
+             <input  type="submit" name = "submit1" value="Rapport til arkivering"  />   
+             <p id="hint">{{crmC.noChange_txt}}</p>
+           </div>
+
+                      
+       </fieldset>  
+     </form>       
+  </section>                                                            
+ 
+  <footer>
+  <p>Copyright &copy; 2014 BedreData</p>
+   </footer>
+</body>
+</html>
+ 

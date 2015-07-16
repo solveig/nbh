@@ -1,0 +1,232 @@
+ 
+
+I mongo shell
+var crm    = { 
+  "total_sucess"   :0,
+   
+  "users"          : [ {"name"    : "solveig",
+                        "signature": "Solveig Løvhaug",
+  	                    "address" : {"street":"Bøkleva","post":1766,"city":"Halden","county":"Østfold","country":"Norge"},
+  	                    "phones"  : [{"phone": "+4797094414","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "solveig@bedredata.no","type" : "private"	}],
+  	                    "role"    : "admin",
+  	                   },
+    	                    {"name"    : "ole",
+  	                    "signature": "Ole OJA",
+  	                    "address" : {"street":"","post":"","city":"sarpsborg","county":"Østfold","country":"Norge"},
+  	                    "phones"  : [{"phone": "","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "","type" : "private"	}],
+  	                    "role"    : "user",
+  	                   },
+   	                    {"name"    : "kari",
+  	                    "signature": "Kari Svendsen",
+  	                    "address" : {"street":"vei","post":"1766","city":"Halden","county":"Østfold","country":"Norge"},
+  	                    "phones"  : [{"phone": "","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "","type" : "private"	}],
+  	                    "role"    : "user",
+  	                   }
+  	                 
+  	                 ], 	
+ 
+   "clients"        : [{"regId"        : 0,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",
+                   
+                          }]}, 	   
+                       {"regId"        : 1,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                          
+                         }]}, 	             
+                       {"regId"        : 2,
+  	                   "contact"       : "ole",
+  	                   "status"       : "arkiv",
+                      "history"       : [{ 
+  	                      "status"       : "arkiv",                      
+                        }]}, 	      
+                     {"regId"        : 3,
+  	                   "contact"       : "ole",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                      
+                       }]}, 	      
+                     {"regId"        : 4,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                      
+                       }]}, 	      
+                       {"regId"        : 5,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",  
+                        }]}, 	      
+                       {"regId"        : 6,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                        "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]}, 	      
+                       {"regId"        : 7,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                       }]}, 	      
+                       {"regId"        : 8,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                      "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                         }]}, 	      
+                       {"regId"        : 9,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]}, 	      
+                       {"regId"        : 10,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]} 	   , 	      
+                       {"regId"        : 11,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]},
+                       {"regId"        : 12,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]} 	   , 	   
+                       {"regId"        : 13,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]} 	   , 	      
+                        {"regId"        : 14,
+  	                   "contact"       : "ole",
+  	                   "status"       : "arkiv",
+                          "freshDate"    : "2014-04-02",
+                      "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                         }]} 	   , 	      
+  
+                        {"regId"        : 15,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]} 	   , 	      
+                        {"regId"        : 16,
+  	                   "contact"       : "ole",
+  	                   "status"       : "arkiv",
+                        "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                       }]} 	   , 	      
+                        {"regId"        : 17,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                        "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                       }]} 	   , 	      
+                        {"regId"        : 18,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]} 	   , 	      
+                        {"regId"        : 19,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                      "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                         }]} 	   , 	      
+                        {"regId"        : 20,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                        "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                       }]} 	   , 	      
+                        {"regId"        : 21,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                       "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]} 	   , 	      
+                        {"regId"        : 22,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                      "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                         }]} 	   , 	      
+                        {"regId"        : 23,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                        "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                       }]} 	   , 	      
+                        {"regId"        : 24,
+  	                   "contact"       : "kari",
+  	                   "status"       : "arkiv",
+                      "history"       : [{ 
+  	                      "status"       : "arkiv",                        
+                        }]} 	   , 	      
+   	   
+                     ]
+            };
+            
+    
+ se kun clients  db.crm.find({},{clients:1}).pretty()                 
+
+Jeg må lage de brukerene i users og lage databasen på arkivtt
+use psi;
+
+http://localhost:27017signup
+solveig katt
+ole olepsi
+kari karipsi
+
+... tar kopierer var crm inne i databasen når databasen er laget        
+db.crm.drop(); 
+db.crm.insert(crm);                 
+njet deprecated db.crm.clients.ensureIndex( {regId : 1 }, { unique: true } )
+bruk db.crm.clients.createIndex( {regId : 1 }, { unique: true } )
+ db.crm.getIndexes()
+db.crm.findOne()           
+db.crm.find({},{clients:1}).pretty()   
+
+var x=4;
+db.crm.update({'clients.regId':1},{$set:{'clients.$.met':"YES"}})
+db.crm.update({'clients.regId':4},{$push:{'clients.$.comments':{comment:"vakker fugl"}}})
+
+
+db.addUser("x","pass")
+vise databaser             show dbs
+vile clooections           show collections
+fjerne databasen
+                           use navn
+                           db.dropDatabase()
+lage database              use xxx (fins den ikke fra gfør blir den laget)
+
+Endre domainnavn i app.js
+
+var setModifier = { $set: {} };
+setModifier.$set['directions.' + index + '.name'] = area.value;
+Items.update(Session.get('selectedItem'), setModifier);
+
+
+var x=4;
+db.crm.update({'clients.regId':1},{$set:{'clients.$.met':"YES"}})
+det blir oppdatert!!
+
+db.crm.update({'clients.regId':1},{$set:{'clients.$.time':4}})

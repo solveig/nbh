@@ -1,0 +1,16 @@
+﻿Ute på server
+Procfile
+  web: node app.js
+  
+app.js
+local
+MongoClient.connect('mongodb://localhost:27017/psi', function(err, db) {
+app.listen(3000);
+    console.log('Express server listening on port 3000');  
+server
+MongoClient.connect('mongodb://psi-heroku:bollersaftogburritos@paulo.mongohq.com:10015/psi', function(err, db) {
+var port = process.env.PORT || 3000;
+   app.listen(port);console.log('Express server listening on port ' + port );     
+   
+Lokal packaage.json inneholder  web: node app.js, er tom på server
+

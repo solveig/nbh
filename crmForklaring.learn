@@ -1,0 +1,51 @@
+crmForklaring.learn
+psi/crm
+i contents.js
+ this.displayNewPostPage = function(req, res, next) {
+        "use strict";
+
+        if (!req.username) return res.redirect("/login");
+
+        return res.render('newpost_template', {
+            subject: "",
+            body: "tull",
+            errors: "",
+            tags: "",
+            username: req.username
+        });
+    }
+    
+    
+ ---
+ 
+ 
+ 
+ TODO
+ 	//TODO< link rel =" stylesheet" href =" http:// localhost: 8080/ href/ psi.css" type =" text/ css" />
+ neste versjon, velge psi fra en liste
+ mobil
+ 
+NORSKE Bokstaver
+hvordan håndtere norsk ,ta csv fila i notepad og save den som uf8
+
+-Lese csv fil inn i mongodb, sjekk at csv fila er savet i UTF8. Mongodb er i UTF(.
+-Fikk kompilerings feil på norske bokstaer  if javascript, pass på at js fila blir savet i utf8.(editor)
+andre ting rundt dette
+-  process.stdout.write(str);
+  process.stdin.setEncoding('utf8');
+-      var authorization_id_bytes = new Buffer(self.username, 'utf8');
+-  _index = _index + _command.write(this.collectionName, _index, 'utf8') + 1;
+-     var file = fs.readFileSync(url, 'utf8');
+-     
+---
+exports.encodeCString = function(string) {
+  var buf = new Buffer(string, 'utf8');
+  return [buf, new Buffer([0])];
+}
+
+exports.decodeUInt32 = function(array, index) {
+  return array[index] | array[index + 1] << 8 | array[index + 2] << 16 | array[index + 3] << 24;
+}
+ 
+7.februar 2014
+psi-crm ligger på C:\Users\solveig\Documents\GitHub>   se github.learn

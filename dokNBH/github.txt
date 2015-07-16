@@ -1,0 +1,43 @@
+github
+solveig/gregorine1 
+
+...help
+Frode hadde kode https://github.com/frodetbj/barkeep jeg ønsket
+Jeg logget meg inn
+brukte clone to desktop og valgte github som dir.
+..end help
+
+
+
+xproc
+http://tests.xproc.org/tests/required/data-003.xml
+
+adobe phonegap build 6.7 2013
+
+
+C:\Users\solveig\Documents\GitHub>
+
+
+
+or å logge deg på kommandolinje interfacet:
+mongo paulo.mongohq.com:10015/psi -u solveig -p katthundhesterbest
+
+
+GIT
+Her er to gode ressurser til git.
+http://git-scm.com/book
+https://help.github.com/
+
+GITHUB.
+Koden ligger på et privat repository på www.github.com
+Lag deg en bruker og gi meg brukernavnet, skal jeg gi deg tilgang.
+
+git pull https://github.com/frodetbj/psi-crm.git
+
+https://github.com/frodetbj/psi-crm  her ligger kildekoden
+
+
+http://psi-crm.herokuapp.com/   på denne serveren er programmet innstallert
+
+
+......

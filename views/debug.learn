@@ -1,0 +1,8 @@
+    	     <select name="psi_id" autofocus required onchange="swapOpts(this.options[selectedIndex].text,this.options[selectedIndex+1].text);">
+   denne="{{client[{{ind}}]status}}";
+var ind = eval(psi_id);
+       
+       var denne= "{{username}}";
+       
+         document.getElementById("id1").innerHTML = '<h1><i>Some italic title...</i>'+ theArray+'</ h1>'; 
+      <p id="id1">tja</p>

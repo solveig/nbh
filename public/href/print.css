@@ -1,0 +1,167 @@
+﻿html {
+			font-size:100.01%;
+		}
+		/* reset */
+		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,hr,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfont,thead,tr,th,td{padding:0;margin:0;border:none;outline:none;vertical-align:baseline;font-family:inherit;font-size:100%;}dfn,i,cite,var,address,em{font-style:normal;}th,b,strong,h1,h2,h3,h4,h5,h6{font-weight:normal;}textarea,input,select{font-family:inherit;font-size:1em;}blockquote,q{quotes:none;}q:before,q:after,blockquote:before,blockquote:after{content:'';content:none;}ol,ul{list-style:none;}ins{text-decoration:none;}del{text-decoration:line-through;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;}:focus{outline:none;}
+
+		html, body {
+			height:100%;
+		}
+
+		body {
+		
+			 margin: 30px;
+       font: 1em "Calibri,Georgia,Serif";
+	     color: black;
+		}
+
+		header, 
+		nav, 
+		section, 
+		article, 
+		aside, 
+		footer {
+			display: block
+		}
+		
+		
+		
+		section {
+			float: left;	
+			position: relative;
+			width: 98%
+		}
+		
+		section header {
+		  margin: 1em 0 3em 0;			
+			font: 1.2em "Calibri,Georgia,Serif";
+			padding: 0;
+		}
+		h1{
+		 font-weight:bold;
+		 margin: 1px 0 0 0;	
+	
+		}
+		img{
+		 margin: 0 0 10px 0;	
+		}
+			
+	  h2{
+		  font-weight:bold;	
+		  display:inline;    
+		}
+		header h4{
+		  	padding: 0px 6px 0px 6px;
+		    display:inline; 
+ 		}
+	
+	 
+	  section header p{
+		 	 display:inline; 		 	 
+		}
+	 
+		
+		
+	
+		section h3 {
+			 display: block;
+			 clear: both;		
+			 font: 1.1em ;
+			 padding: 0;
+			 font-weight:bold;
+			 text-decoration:underline
+		}
+		
+		section p {
+			margin: 0 0 1em;
+			}		
+		
+    #part{
+	    display:inline;
+	    padding: 0px 20px 12px 0px;
+	    float: left;
+
+	  }	 
+	  #hel{
+	    display: block;
+	    clear: both;
+	  }	
+ 	  
+	 
+	  table {	  
+	    margin: 1em 0 1em 0;	
+	   }
+	   
+     tr {
+    	padding: 0px 30px 0px 0px;    
+    }
+	   
+     td {
+    	padding: 0px 30px 0px 0px;    
+    }
+	 
+	   th {
+	   	 font-weight:bold;	
+    	padding: 0px 30px 0px 0px;
+     }
+     #left{
+	    display:inline;
+	    padding: 0px 20px 0px 0px;
+	    float: left;
+	   }	 
+	   #right{
+	    display:inline;
+	    padding: 0px 52px 0px 0px;
+	    float: right;
+	   }	 
+	   #kopi{
+	    display: block;
+	    float: right;
+	    clear: both;
+	    padding: 18px 35px 0px 0px;
+	   }	
+	   kopi h2{
+		  font-weight:normal;	
+		 }
+	 
+	 
+
+      
+     #bunn p {
+       display: block;
+     }
+     #bunn {
+     	  display: block;
+        font-size: 1em;  
+         
+       text-align:center;  	
+        
+       }
+   	footer {
+			clear: both;
+			  width: 100%;
+			  bottom: 10px;
+        position: fixed;
+			}
+   
+	 .button1 
+   { box-sizing: border-box; 
+   	padding:0.2em;
+   	border-radius : 1px;
+    border: 1px solid  grey;
+    background-color:#dfdfdf;
+    box-shadow: 4px 4px 2px #888888;
+    font-size: 1em;
+	 }
+	 nav,a,h1,h2,p,ul,li,select,input ,div
+    {display:inline;    
+   }
+    nav
+    {display:block; 
+    margin : 0px 0px 10px 0px;	  
+   }
+   a {
+			
+			color: black;
+			text-decoration: none
+		}

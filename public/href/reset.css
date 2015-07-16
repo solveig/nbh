@@ -1,0 +1,430 @@
+html {
+			font-size:100.01%;
+		}
+		/* reset */
+		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,hr,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfont,thead,tr,th,td{padding:0;margin:0;border:none;outline:none;vertical-align:baseline;font-family:inherit;font-size:100%;}dfn,i,cite,var,address,em{font-style:normal;}th,b,strong,h1,h2,h3,h4,h5,h6{font-weight:normal;}textarea,input,select{font-family:inherit;font-size:1em;}blockquote,q{quotes:none;}q:before,q:after,blockquote:before,blockquote:after{content:'';content:none;}ol,ul{list-style:none;}ins{text-decoration:none;}del{text-decoration:line-through;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;}:focus{outline:none;}
+
+		
+		  html, body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        }
+        	body {
+			margin: 10px;
+			font: 1em/1.7  "Times New Roman",Georgia,Serif;
+			background: RoyalBlue;
+			color: white;			
+			}
+		form {
+			margin-top:0.4em;
+			}
+			h1 {
+			font-size: 1.2em;
+			font-weight: bold;
+		  }
+		  	h2 {
+			font-size: 1.1em;
+			font-weight: bold;
+		  }
+	legend {
+			padding:2px;
+			margin: 1px;
+			font: 0.9em/1.7  "Times New Roman",Georgia,Serif;
+			background: royalblue;
+			color: white;
+		  border: 0px solid  lightblue;	
+		}
+		
+		header, 
+		nav, 
+		section, 
+		article, 
+		aside, 
+		footer {
+			display: block;
+				background: royalblue;
+			
+		}
+		a {		
+		 padding-top:1.6em;
+   	 padding-bottom:1.0em;
+   	 padding-left:1.30em;
+   	 padding-right:2.0em;
+		 color: black;
+			text-decoration: none;				
+		}
+		
+		a:link { color: black; }
+    a:active { color: black; }
+    a:visited { color: black;; }
+    a:hover { color: gray; }
+
+		p {
+			margin: 0 0 1em
+		}
+	
+		nav li ul {
+				display: inline;	
+			
+			}
+	
+
+		section {
+			float: left;	
+			position: relative;
+			width: 98%
+		}
+		
+			section article {
+				margin: 0 50px 40px;
+				padding: 25px 0 0;
+				position: relative
+			}
+			section header {
+				font-size: 1em;
+				padding: 0;
+			}
+	
+		aside {
+			float: right;					
+		}
+	
+			
+
+			footer {
+				font-size: 0.9em;#map-canvas
+				color: silver;
+				padding-left:30%;
+			  width: 100%;
+			  
+			  bottom: 0;
+       position: ;
+			}
+
+  #map-canvas  {
+   	 border: 2px solid  black;	
+   	 box-sizing: border; 
+   	 margin:0;  
+     background-color:red;
+     font-size: 1em;          
+     background-size:contain;
+	 }	
+ .logoNBH
+   {
+   	 border: 0px solid  black;	
+   	 box-sizing: border-box; 
+   	 margin:0;  
+     background-color:royalblue;
+     font-size: 1em;          
+     background-size:contain;
+	 }	
+	  #question:hover {
+   	display:block;
+   	}
+   	
+   #description 
+   {   	   
+    display:none;
+	  color : black;
+	  width : 42%;
+	  border:2px solid black;
+    padding:1em ; 
+    margin : 1em 1em 0px 0px;
+    background:white;
+    text-align:center; 
+    border-radius:2em;
+     position: absolute;
+    left: 50%;
+    top: 10%;
+	 }	
+	 .what, 
+	 .question
+   {   	   
+	  color : black;
+	  padding-top:0.05em;
+    padding-bottom:0.05em;
+    padding-left:0.3em;
+  	padding-right:0.3em;    
+    background:yellow;
+    text-align:center; 
+    border-radius:2em;
+    font-size: 1em;
+    font-weight: bold;  
+	 }	
+	 .what {
+    background:silver;
+	 }
+	  aside:hover {
+   	display:block;
+   	}
+   aside{
+    display:none;
+   }	
+	 
+	 
+	.flag{
+		margin:0px;  
+  }
+  .toleft {
+    float: right;
+    margin:0;
+  } 
+  a.toleft1 {
+  	  margin:0;    		
+		 padding-top:0em;
+   	 padding-bottom:0em;
+   	 padding-left:0em;
+   	 padding-right:0em;
+			color: black;
+			text-decoration: none;						
+  }
+
+			
+	.sun, .button,.button1
+   {
+   	box-sizing: border-box; 
+   	 width:8em;
+   	 padding-top:1.4em;
+   	 padding-bottom:0.8em;
+   	 padding-left:0.2em;
+   	 padding-right:0.0em;,
+   
+     background-color:royalblue;
+     font-size: 1em;
+     background-image:url('../img/skyStor.svg');
+     background-repeat:no-repeat;
+     background-size:contain;
+     display: inline-block;   	
+     margin: 0 0 0 0;
+    
+	 }
+	
+	 .sun
+   {
+   	  width:5em;
+   	  margin: 0 0 0 0;
+      background-image:url('../img/sola.svg');
+      padding-bottom:1.6em;
+  	 }
+	 
+	.button2
+   { 
+  	 padding-top:1.4em;
+   	 padding-bottom:1.4em;
+   	 padding-left:0.0em;
+   	 padding-right:0.0em;
+    	
+      background-color:royalblue;
+     font-size: 1em;
+     background-image:url('../img/skyLiten.svg');
+     background-repeat:no-repeat;
+     background-size:contain;
+     
+     display: inline-block;
+ width:6%;
+  margin: 0.1em;
+	 }
+	 
+ 
+
+	 
+	
+   .valgt
+   { box-sizing: border-box; 
+   	padding:0.2em;
+   	border-radius : 1px;
+    border: 1px solid  gray;
+    background-color:yellow;
+    box-shadow: 4px 4px 2px #888888;
+    font-size: 1em;
+	 }
+	 
+   #hint{
+    display: none;
+	  color : black;
+	  width : 22%;
+	  border:2px solid black;
+    padding:10px ; 
+    margin : 10px 10px 0px 0px;
+    background:white;
+    text-align:center; 
+    border-radius:25px;
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+	 }
+	
+   label {
+  	padding-top:0.2em;
+ 	  margin-left: 0.5em;
+    border: 2px solid  lightblue;
+    box-shadow: 2px 2px 1px blue;
+   }
+div.blokk {
+		display: block;
+		margin-bottom:1em;
+  } padding-bottom:0em;
+    padding-left:0.5em;
+  	padding-right:0.5em;    
+    background:silver;
+    text-align:center; 
+    border-radius:2em;
+    font-size: 0.9em;
+    font-weight: bold;  
+	 }	
+	 
+	 label {
+  	padding-top:0.2em;
+ 	  margin-left: 0.5em;
+    border: 2px solid  lightblue;
+    box-shadow: 2px 2px 1px blue;
+   }
+   div.blokk {
+		display: block;
+		margin-bottom:1em;
+   }
+   input[type="checkbox"],
+   input[type="radio"],
+   input[type="number"],
+   input[type="date"],
+   input[type="time"] {   
+     box-sizing: border-box; 
+     margin:0em;
+     height: 1.1em;
+     width: 1.1em;   
+   }
+  input[type="date"] {
+    height: 1.1em;
+    width: 9em; 
+   }
+   input[type="time"] {
+     height: 1.1em;
+     width: 5em; 
+   }
+   input[type="number"] {
+     height: 1.1em;
+     width: 3em; 
+    }
+
+   nav,a,h1,h2,p,ul,li,select,input ,div
+    { display:inline;       	
+   }
+   option.hidden 
+    {display:none;
+    }
+		
+   .hidden  
+    {display:none;}
+   .visible 
+   
+   
+   		  #leftTxt {
+   		  	clear:left;
+        display:inline;
+		  }	
+
+    
+ 
+    input#ekskludert:checked ~ div#ekskludertDiv 
+    {
+     display: block;
+    }
+  
+    input#inkludert:checked ~ div#inkludertDiv 
+    {
+     display: block;
+    }	
+   
+    input#syk:checked ~ div#treatDiv 
+    {
+     display: block;
+    }
+    input#frisk:checked ~ div#treatDiv 
+    {
+     display: block;
+    }
+   
+   input#xxxiVedlikehold:checked ~ div#treatDiv 
+    {
+     display: none;
+    }
+   
+   
+    input#frisk:checked ~ div#recDiv 
+    {
+     display: block;
+    }	
+    input#vedlikehold:checked ~ div#recDiv 
+    {
+     display: block;
+    }
+   
+   
+   
+   
+   
+   
+   .logo {
+    padding: 2px;
+    margin:0;
+ }
+ 
+textarea {
+	margin : 0px 0px 12px 0px;
+	display: block;
+	width: 94%;
+	height: 50px;
+	padding: 10px;
+}
+textarea.mindre {
+	margin : 0px 0px 12px 0px;
+	display: block;
+	width: 94%;
+	height: 20px;
+	padding: 10px;
+}
+textarea.minst {
+	margin : 0px 0px 12px 0px;
+	display: block;
+	width: 94%;
+	height: 10px;
+	padding: 10px;
+}
+
+
+fieldset {
+	
+	padding : 10px;
+  border: dashed 4px white;
+  border-radius: 7px;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-bottom-style: none;
+
+  
+}
+
+#plass {
+	margin : 12px 0px 12px 0px;
+	display: block;
+	
+	}
+	 	.button3
+   {     
+  	 background:yellow;
+     box-sizing: border-box;  
+     font-size: 1.0em;  
+    border-radius: 0.2em;        
+    padding-top:0.2em;
+    padding-bottom:0.2em;
+   	padding-left:0.1em;
+   	padding-right:0.1em;
+   	display: inline-block;
+    
+	 }
+	 
+	 
+	
+

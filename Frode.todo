@@ -1,0 +1,314 @@
+Frode
+Her er en testdatabase å starte med.
+
+I mongo shell
+var crm    = { 
+  "total_sucess"   :0,
+  "office"         : [{"country" :"Norge",
+  	                   "county":"Østfold",
+  	                   "city":["Halden","Sarpsborg","Fredrikstad","Moss","Askim"]
+  	                  }],
+  
+  "users"          : [ {"name"    : "solveig",
+                        "signature": "Solveig Løvhaug",
+  	                    "address" : {"street":"Bøkleva","post":1766,"city":"Halden","country":"Norge"},
+  	                    "phones"  : [{"phone": "+4797094414","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "solveig@bedredata.no","type" : "private"	}],
+  	                    "office"  : ["Halden"],
+  	                    "role"    : "admin",
+  	                    sucsess   : 0
+  	                   },
+  	                    {"name"    : "jarle",
+  	                    "signature": "Jarle Refnin",
+  	                    "address" : {"street":"Bokfinkveien 4","post":"","city":"halden","country":"Norge"},
+  	                    "phones"  : [{"phone": "","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "","type" : "private"	}],
+  	                    "office"  : ["Halden"],
+  	                    "role"    : "admin",
+  	                    sucsess   : 0
+  	                   },
+  	                    {"name"    : "ann-kristin",
+  	                    "signature": "Ann Kristin Løvhaug",
+  	                    "address" : {"street":"Bokfinkveien 4","post":"","city":"halden","country":"Norge"},
+  	                    "phones"  : [{"phone": "","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "","type" : "private"	}],
+  	                    "office"  : ["Halden"],
+  	                    "role"    : "admin",
+  	                    sucsess   : 0
+  	                   },
+  	                    {"name"    : "frode",
+  	                    "signature": "Frode Bjerke",
+  	                    "address" : {"street":"","post":"","city":"","country":"Norge"},
+  	                    "phones"  : [{"phone": "","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "","type" : "private"	}],
+  	                    "office"  : [""],
+  	                    "role"    : "admin",
+  	                    sucsess   : 0
+  	                   },
+  	                    {"name"    : "ole",
+  	                    "signature": "Ole OJA",
+  	                    "address" : {"street":"","post":"","city":"sarpsborg","country":"Norge"},
+  	                    "phones"  : [{"phone": "","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "","type" : "private"	}],
+  	                    "office"  : ["sarpsborg"],
+  	                    "role"    : "user",
+  	                    sucsess   : 0
+  	                   },
+  	                    {"name"    : "hans",
+  	                    "signature": "Hans Hansen",
+  	                    "address" : {"street":"","post":"","city":"Halden","country":"Norge"},
+  	                    "phones"  : [{"phone": "","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "","type" : "private"	}],
+  	                    "office"  : ["Halden"],
+  	                    "role"    : "user",
+  	                    sucsess   : 0
+  	                   },
+  	                    {"name"    : "kari",
+  	                    "signature": "Kari Svendsen",
+  	                    "address" : {"street":"","post":"","city":"","country":"Norge"},
+  	                    "phones"  : [{"phone": "","type" : "mobil"}],
+  	                    "email"   : [{"epost" : "","type" : "private"	}],
+  	                    "office"  : ["sarpsborg"],
+  	                    "role"    : "user",
+  	                    sucsess   : 0
+  	                   }
+  	                 
+  	                 ], 	
+ 
+   "clients"        : [{"psi_id"        : 0,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+  	                   "freshDate"    : "2014-04-01",
+                       "history"       : [{ 
+  	                      "status"       : "ny",
+                   
+                          }]}, 	   
+                       {"psi_id"        : 1,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                       "freshDate"    : "2014-04-02",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                          
+                         }]}, 	             
+                       {"psi_id"        : 2,
+  	                   "contact"       : "ole",
+  	                   "status"       : "ny",
+                       "freshDate"    : "2014-04-03",
+                      "history"       : [{ 
+  	                      "status"       : "ny",                      
+                        }]}, 	      
+                     {"psi_id"        : 3,
+  	                   "contact"       : "ole",
+  	                   "status"       : "ny",
+                       "freshDate"    : "2014-04-04",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                      
+                       }]}, 	      
+                     {"psi_id"        : 4,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                       "freshDate"    : "2014-04-05",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                      
+                       }]}, 	      
+                       {"psi_id"        : 5,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-06",  	                                            
+                      "history"       : [{ 
+  	                      "status"       : "ny",  
+                        }]}, 	      
+                       {"psi_id"        : 6,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-07",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]}, 	      
+                       {"psi_id"        : 7,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-08",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                       }]}, 	      
+                       {"psi_id"        : 8,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-09",
+                      "history"       : [{ 
+  	                      "status"       : "ny",                        
+                         }]}, 	      
+                       {"psi_id"        : 9,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-10",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]}, 	      
+                       {"psi_id"        : 10,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-11",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]} 	   , 	      
+                       {"psi_id"        : 11,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-12",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]},
+                       {"psi_id"        : 12,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-05-11",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]} 	   , 	   
+                       {"psi_id"        : 13,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-01",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]} 	   , 	      
+                        {"psi_id"        : 14,
+  	                   "contact"       : "ole",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-02",
+                      "history"       : [{ 
+  	                      "status"       : "ny",                        
+                         }]} 	   , 	      
+  
+                        {"psi_id"        : 15,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-17",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]} 	   , 	      
+                        {"psi_id"        : 16,
+  	                   "contact"       : "ole",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-03-11",
+                        "history"       : [{ 
+  	                      "status"       : "ny",                        
+                       }]} 	   , 	      
+                        {"psi_id"        : 17,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-03-11",
+                        "history"       : [{ 
+  	                      "status"       : "ny",                        
+                       }]} 	   , 	      
+                        {"psi_id"        : 18,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-02-11",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]} 	   , 	      
+                        {"psi_id"        : 19,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-08-11",
+                      "history"       : [{ 
+  	                      "status"       : "ny",                        
+                         }]} 	   , 	      
+                        {"psi_id"        : 20,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-21",
+                        "history"       : [{ 
+  	                      "status"       : "ny",                        
+                       }]} 	   , 	      
+                        {"psi_id"        : 21,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-22",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]} 	   , 	      
+                        {"psi_id"        : 22,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-04-23",
+                      "history"       : [{ 
+  	                      "status"       : "ny",                        
+                         }]} 	   , 	      
+                        {"psi_id"        : 23,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-05-23",
+                        "history"       : [{ 
+  	                      "status"       : "ny",                        
+                       }]} 	   , 	      
+                        {"psi_id"        : 24,
+  	                   "contact"       : "kari",
+  	                   "status"       : "ny",
+                          "freshDate"    : "2014-05-24",
+                       "history"       : [{ 
+  	                      "status"       : "ny",                        
+                        }]} 	   , 	      
+   	   
+                     ]
+            };
+            
+    
+ se kun clients  db.crm.find({},{clients:1}).pretty()                 
+
+Jeg må lage de brukerene i users og lage databasen på nytt
+use psi;
+
+http://localhost:3000/signup
+solveig katt
+jarle jarlepsi
+ak akpsi
+frode frodepsi
+hanshanspsi
+ole olepsi
+kari karipsi
+
+... tar kopierer var crm inne i databasen når databasen er laget        
+db.crm.drop(); 
+db.crm.insert(crm);                 
+njet deprecated db.crm.clients.ensureIndex( {psi_id : 1 }, { unique: true } )
+bruk db.crm.clients.createIndex( {psi_id : 1 }, { unique: true } )
+ db.crm.getIndexes()
+db.crm.findOne()           
+db.crm.find({},{clients:1}).pretty()   
+
+var x=4;
+db.crm.update({'clients.psi_id':1},{$set:{'clients.$.met':"YES"}})
+db.crm.update({'clients.psi_id':4},{$push:{'clients.$.comments':{comment:"vakker fugl"}}})
+
+
+db.addUser("x","pass")
+vise databaser             show dbs
+vile clooections           show collections
+fjerne databasen
+                           use navn
+                           db.dropDatabase()
+lage database              use xxx (fins den ikke fra gfør blir den laget)
+
+Endre domainnavn i app.js
+
+var setModifier = { $set: {} };
+setModifier.$set['directions.' + index + '.name'] = area.value;
+Items.update(Session.get('selectedItem'), setModifier);
+
+
+var x=4;
+db.crm.update({'clients.psi_id':1},{$set:{'clients.$.met':"YES"}})
+det blir oppdatert!!
+
+db.crm.update({'clients.psi_id':1},{$set:{'clients.$.time':4}})
+
+git
+cd c:/nbh her er hele prosjektet
+git init ... det blir laget en .git fil
+.gitignore legge tile node_modules  (pga windows ikke håndterer lange filnavn)
+git add .
+git status 

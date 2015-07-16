@@ -1,0 +1,37 @@
+﻿Forandre psi_id til client ha ensure index ,
+status arkivStatus ,trengs de på client nivå...tor det
+aggregate i node.js har []
+
+
+Kommer med arkiv false, ikke velge psi_id,men status
+
+Submit...
+lagre/print
+lagre og arkiv=false og vise print deretter tlbakepil
+
+Send psi_id
+lagre arkiv =true
+
+Meny valg
+Lag Rapport
+velge fra alle psi 
+en bestemt psi med 
+ if den siste har arkiv=true kun  psi fra db
+ if den siste har arkiv=false psi+data fra db
+
+
+
+Arkiverte
+velge fra alle psi 
+en bestemt psi med arkiv=true
+
+Kommentar
+velge fra alle psi 
+kun psi fra db
+Kun send psi 
+
+tilbakepil
+velge fra alle psi 
+print med en bestemt id
+en bestemt psi, med siste som har arkiv=false
+velge status ,kunne endre

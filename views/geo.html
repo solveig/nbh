@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>                                                                                 
+<html lang=no>                                                                                          
+  <head>  
+  	<title>Geoloaction</title>                                                                                      
+    <style type="text/css">                                                                     
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}                           
+    </style>                                                                                    
+    <script                                                           
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1GTEmzY3exuXbC9oueBBsNxRfVCRDZnY">
+    </script>                                                                                   
+      <script type="text/javascript">        
+      	var geocoder;
+var map;
+var myPos={ lat: 59.07951, lng: 11.46435};
+                                                     
+      function initialize() {                                                                   
+        var mapOptions = {                                                                  
+          center: myPos,                                                
+          zoom: 8                                                                               
+        };                                                                                      
+         map = new google.maps.Map(document.getElementById('map-canvas'),                    
+            mapOptions);                                                                        
+          geocoder = new google.maps.Geocoder();
+      }          
+      function codeAddress() {
+  var address = document.getElementById('address').value;
+  var lat;
+  var lng;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+        lat =results[0].geometry.location.lat();
+        lng=results[0].geometry.location.lng();
+        alert('lat='+lat+' lng='+lng);
+
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  })
+}
+function initGeoLocation() {
+
+  // Try HTML5 geolocation
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
+
+      var infowindow = new google.maps.InfoWindow({
+        map: map,
+        position: pos,
+        content: 'Location found using HTML5.'
+      });
+
+      map.setCenter(pos);
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
+}
+
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+    var content = 'Error: The Geolocation service failed.';
+  } else {
+    var content = 'Error: Your browser doesn\'t support geolocation.';
+  }
+
+  var options = {
+    map: map,
+    position: new google.maps.LatLng(60,105),
+    content: content
+  };
+
+  var infowindow = new google.maps.InfoWindow(options);
+  map.setCenter(options.position);
+}
+                                                                               
+      google.maps.event.addDomListener(window, 'load', initialize);                             
+    </script>                                                                                   
+  </head>                                                                                       
+  <body>  
+  
+                                                                                         
+<div id="map-canvas"></div>                                                                     
+  	<div id="panel">
+      <input id="address" type="text" value="Adressen">
+      <input type="button" value="Geocode" onclick="codeAddress()">
+      <input id="location" type="text" value="Lokasjon">
+      <input type="button" value=myPos onclick="initGeoLocation()">
+    
+    </div>
+    <script>
+    	var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+// Check for Geolocation API permissions  
+navigator.permissions.query({name:'geolocation'}).then(function(permissionStatus) 
+{  
+  console.log('geolocation permission status is ', permissionStatus.status);  
+  permissionStatus.onchange = function() {  
+    console.log('geolocation permission status has changed to ', this.status);  
+  };
+});
+
+Notification.requestPermission(function(result) {  
+  if (result === 'denied') {  
+    console.log('Permission wasn\'t granted. Allow a retry.');  
+    return;  
+  } else if (result === 'default') {  
+    console.log('The permission request was dismissed.');  
+    return;  
+  }  
+  console.log('Permission was granted for notifications');  
+});
+function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log('Latitude : ' + crd.latitude);
+  console.log('Longitude: ' + crd.longitude);
+  console.log('More or less ' + crd.accuracy + ' meters.');
+};
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+};
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+    	
+    	</script>
+    </body>                                                                                       
+</html>                                                                                         

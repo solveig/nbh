@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">    
+<meta charset="UTF-8">    
+<title>{{title}}</title>
+<link rel='stylesheet' href='href/reset.css'>
+
+<script    src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+<script>
+    var ny                = new Array('Velg','registrering','arkiv','kommentar'); // last indicate if comment is required
+    var iarkiv       = new Array('Velg','arkiv','kommentar','');
+    var iVedlikehold      = new Array('Velg','avsluttVedlikehold','kommentar','');
+    var id_ind            = 0;
+    var iKommentar        = new Array('Velg','kommentar','');
+    var valg              = "begin";
+
+    function init() {      
+        valgtRegistrering = document.querySelector("#valgtRegistrering");
+        valgtArkiv = document.querySelector("#valgtArkiv");
+        valgtKommentar = document.querySelector("#valgtKommentar");
+        //form.reset(); det er ved piltast tilbake id st�r
+      
+    }
+       
+ 
+    function setOptionText(ExSelect, theArray) {
+      for (loop = 0; loop < theArray.length  ; loop++) {       	 
+          ExSelect.options[loop].text = theArray[loop];
+      }
+    }                             
+    
+   	function swapOpts(regId,ArrayName) {
+       var ExSelect = document.theForm.status;
+       var theArray = eval(ArrayName);
+       setOptionText(ExSelect, theArray);      
+       document.querySelector('#xx').innerHTML = '<input type=hidden name=\"psiNy\" value='+regId+'>';
+       id_ind = regId;
+     }
+ 
+    function showMe(valgt) {   
+    	   valgtRegistrering.className   = "hidden";
+         valgtArkiv.className     = "hidden";
+         valgtKommentar.className   = "hidden";           
+          	
+        switch (valgt) {
+        case 'registreing' :
+            valgtRegistrering.className = "visible";
+            setRequired("valgtRegistrering");
+            break;
+            
+        case 'arkiv' :
+            valgtArkiv.className   = "visible";
+            setRequired("valgtHenlagt");
+            break;
+        case 'kommentar' :	
+            valgtKommentar.className = "visible";
+            setRequired("valgtKommentar");
+            break;
+        
+        default : alert('error in showMe' + valgt);    
+        }           
+        valg = valgt;
+    }
+   
+    function setRequired(denne) {    	
+        var pone,pone2,pone3;
+                                                                         
+        switch (denne) {
+        case 'valgtRegistrert' : 
+            pone = document.querySelector('#regDate'); 
+            pone.required = false;
+            break;
+        case 'valgtArkiv'  : 
+            pone = document.querySelector('#changeDate'); 
+            pone.required = false;
+              pone3.required = false;
+            break;
+      
+   default :            
+            var p1 = document.querySelectorAll( '#' + denne+ ' textarea ,#' + denne + ' input[type=date]' +',#' + denne + ' input[type=number]');      
+            var p2 = document.querySelectorAll('textarea ,input' );                     
+            for ( var i = 0; i < p2.length; i++ ) {
+                //p2[i].style.backgroundColor = "blue";
+                p2[i].required = false;
+            }       
+            var ss = '#' + denne+ ' textarea ,#' + denne + ' input' ; 
+            //alert(ss);
+            var p1 = document.querySelectorAll( '#' + denne+ ' textarea ,#' + denne + ' input[type=date]' +',#' + denne + ' input[type=number]');              
+            for ( var i = 0; i < p1.length; i++ ) {                 
+                if ((p1[i].id=='notes') == false) 
+                {
+                    p1[i].required = true;     
+                    //p1[i].style.backgroundColor = "red";                   
+                }
+            }
+        }
+    }
+
+
+</script>
+</head>
+ 	
+<body> 
+
+  {% if {{crm.username}} %}
+  
+  <section>
+  
+  <header>
+  <nav>
+         {% else %}
+        {{crmC.notlogged_in}}      <a href="/login">{{crmC.login}}</a> 
+        {% endif %}
+        {% if {{crm.username}} == "solveig" %}	
+          <ul>                                                                                                                                                                                        
+            <li class="button"><a href="/signup">{{crmC.signup}}</a></li>
+            <li  class="button"><a href="/overview">{{crmC.overview}}</a></li>
+          </ul>   
+        {% endif %}
+      
+        <div class= "blokk">
+ 	        <p><img  class="logoNBH"  src="img/nbhLogoTextRight.svg" alt="logo til Ny blå himmel" /></p>    
+         <ul class="toleft">
+ 	        <li class="flag"> 
+ 	          <a class="toleft1" href="/newCrmClient" >
+ 	            <img src="img/FlagEng.svg"    alt="Norske flagg" />        
+            </a>
+          </li>
+          <li class="flag">
+            <a class="toleft1" href="/newCrmClient" >
+ 	            <img src="img/FlagNor.svg"    alt="Norske flagg" />       
+            </a>
+          </li>  
+          <li onmouseout="document.getElementById('description').style.display='none';" onmouseover="document.getElementById('description').style.display='block';" >
+            <p class="question">?</p>    
+            <p id="description"> Kommer en beskrivelse etterhvert... trenger forslag ...</p>         
+          </li>
+       </ul>
+      </div>
+       
+        <ul>     
+          <li   class="button"><a  href="/newCrmClient" > {{crmC.register_txt}}</a></li>
+          <li   class="button"><a  href="/arkiverte" >{{crmC.arkiv_txt}}</a></li>
+          <li   class="sun"><a  href=""  ></a></li>
+         <li   class="button"><a  href="/"  >{{crmC.comment_txt}}</a></li>
+          <li   class="button"><a  href="/logout">{{crmC.logout}} </a></li> 
+         </ul>
+  </nav>
+  </header>   
+     <form name="theForm"  action="/newCrmClient" method="POST">    
+       <fieldset>
+           <legend >{{crmC.title_txt}}{{crmC.user_more_txt}} {{crm.username}}</legend> 
+            <div id="valgtRegistrering" class="visible">
+               <div class= "blokk">
+               	  <h2 > {{crmC.registration_txt}} </h2>  
+                  <label for="studyDate">
+               	  <input type="date" id="studyDate" name="studyDate"    >{{crmC.date_txt}}</label> 
+              	  <label for="studyTime"> 
+               	  <input type="time" id="studyTime" name="studyTime"    >{{crmC.clock_txt}}</label>            
+                  <h2> {{crmC.duration_txt}} </h2>  
+                  <label for = "studyHours"> 
+                  <input type="number" id="studyHours" name="studyHours" min=0 max=1000 >  {{crmC.studyHours_txt}} </label>     
+                  <label for = "studyMin"> 
+                  <input type="number" id="studyMin" name="studyMin" min=0 max=60 >{{crmC.studyMin_txt}} </label>       
+                 </div>     
+              <div class= "blokk">
+              <h2>{{crmC.airstrips_txt}}</h2>
+              <label for  = "airstrips"> <input type="checkbox" id="airstrips"  name ="airA"  value="X">  
+              {{crmC.air_a}}</label>                 
+              <label for  = "airstrips"><input type="checkbox" id="airstrips"  name ="airB"  value="X">   
+              {{crmC.air_b}}</label>
+              <label for  = "airstrips"><input type="checkbox" id="airstrips"  name ="airC"  value="X">   
+              {{crmC.air_c}}</label>
+              <label for  = "airstrips"><input type="checkbox" id="airstrips"  name ="airD"  value="X">   
+              {{crmC.air_d}}</label>
+              <label for  = "airstrips"><input type="checkbox" id="airstrips"  name ="airE"  value="X">                 	
+              {{crmC.air_e}}</label>
+              <label for  = "airstrips"> <input type="checkbox" id="airstrips"  name ="airF"  value="X">   
+              {{crmC.air_f}}</label>
+              <label for = "cloud"><input type="checkbox" id="cloud"  name ="cloA"  value="X"> 
+              {{crmC.cloud_txt}}</label>
+                    
+            </div>  
+               <div class= "blokk">
+                   <label for = "moreAirNr">   
+                  <input type="number" id="moreAirNr" name="moreAirNr" min=0 max=100 > {{crmC.sim_a}} </label>    
+                   <label for = "noStripeNr">  
+                  <input type="number" id="noStripeNr" name="moreAirNo" min=0 max=100 > {{crmC.sim_b}} </label>     
+              </div>  
+             
+            <div class= "blokk"><br><br>
+            
+              <div class= "blokk">
+                  <label for = "localization">{{crmC.localization_txt}}</label>
+                 </div>               
+             <div class= "blokk">
+                  <label for = "pictures">{{crmC.pictures_txt}}</label>
+              </div>               
+             <div class= "blokk">
+                  <label for = "videos">{{crmC.videos_txt}}</label>
+              </div>               
+             <div class= "blokk">
+                  <label for = "forcast">{{crmC.forcast_txt}}</label>
+              </div>               
+             <div class= "blokk">
+                  <label for = "speed">{{crmC.speed_txt}}</label>
+              </div>               
+             <div class= "blokk">
+                  <label for = "height">{{crmC.height_txt}}</label>
+              </div>               
+             <div class= "blokk">
+                  <label for = "direction">{{crmC.direction_txt}}</label>
+              </div>               
+             <div class= "blokk">
+                  <label for = "aircraft">{{crmC.aircraft_txt}}</label>
+              </div>               
+             <div class= "blokk">
+                  <label for = "airline">{{crmC.airline_txt}}</label>
+              </div>               
+              <div class= "blokk">
+                  <label for = "airtrafic">{{crmC.airtrafic_txt}}</label>
+              </div>               
+                                          
+              <div class= "blokk">
+                  <label for = "notes">{{crmC.notes_txt}}</label>
+               </div>  
+            </div>  
+                
+            </div>      
+           <div id="plass" class="hidden">
+           	 
+               <div id="valgtKommentar" class="hidden">       
+                   <label for = "notes">{{crmC.notes_txt}}</label>
+                   <textarea id="notes"  name ="notes" ></textarea>             
+                   <label for="notesDate">{{crmC.notesDate_txt}}</label>   
+                   <input type="date" id="notesDate" name="notesDate"   value={{notesDate}}>
+             </div>
+           </div>
+          
+                 
+           <input type="hidden" name="signature" value="{{crm.signature}}">
+          
+                         
+           <input class="button3" type="submit" name = "submit1" value="Lagre"  /> 
+           <div onmouseout="document.getElementById('hint').style.display='none';" onmouseover="document.getElementById('hint').style.display='block';" >
+             <p class="what">?</p>    
+             <p id="hint">{{crmC.save_txt}}</p>         
+           </div>
+
+      </fieldset>  
+     </form>       
+  </section>                                                            
+  <footer>
+  <p>Copyright &copy; 2015 BedreData</p>
+   </footer>
+</body>
+</html>
+   

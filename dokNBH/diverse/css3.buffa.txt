@@ -1,0 +1,828 @@
+ http://dabblet.com/user/PhilippeRenevierGonin
+
+rammer i henhold til text
+div {
+	/* 
+	/* no prefix for min-content, but write with a prefix for max-content or fill-available or fit-content, e.g., -webkit-fit-content */
+	width: -webkit-fit-content; 
+	border: black thin solid;
+	margin-bottom: 1rem;	
+}
+<div>Few words, in order to write some text</div>
+<div>Several words, in order to write some text, but a little bit more</div>
+
+....
+ 
+<div>first box: simple shadow</div>
+<div>second box: shadow with blur</div>
+div {
+	width: 10rem;
+	height: 5rem;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+div:nth-child(1) {
+	/* first box */
+	box-shadow: 0.2rem 0.2rem black; 
+}
+
+div:nth-child(2) {
+	/* second box  : blur effect */
+	box-shadow: 0.2rem 0.2rem 0.2rem black; 
+}
+
+div:nth-child(3) {
+	/* third box : spread effect, let change the fourth length values;*/
+	margin: 6rem;
+	box-shadow: 0.2rem 0.2rem 0.2rem 1rem black; 
+}
+....
+#example2{
+ 		background-image: radial-gradient(red, orange, yellow, green, blue, indigo, purple);
+ 		} 
+<div id="example2"></div>
+
+
+...
+#fixe{
+    position: absolute;
+    top:50px;left:50px;
+    height: 150px;
+    width: 150px;
+    border: thin solid black;
+    z-index: 1;
+}
+
+#transforme{
+    position: absolute; /* in the parent... */
+    top:0;left:0;
+    height: 150px;
+    width: 150px;
+    border: thin solid black;
+    background-color: rgba(255,0,0, 0.75);
+    transform: rotateZ(45deg) translateX(1rem) skewY(45deg);
+    box-shadow: 1rem 1rem ; 
+    z-index: 2;
+}
+
+<div id="fixe"><div id="transforme"></div></div>
+...
+/**
+ * perspective
+ */
+
+#fixe{
+    position: absolute;
+    top:50px;left:50px;
+    height: 150px;
+    width: 150px;
+    border: thin solid black;
+    z-index: 1;
+    perspective: 150px;
+    perspective-origin: 50% 50%;
+}
+
+#transforme{
+    position: absolute; /* in the parent... */
+    top:0;left:0;
+    height: 150px;
+    width: 150px;
+    border: thin solid black;
+    background-color: rgba(255,0,0,0.5);
+    transform: rotateX(45deg);
+    z-index: 2;
+}
+<!-- content to be placed inside <body>…</body> -->
+<div id="fixe"><div id="transforme"></div></div>
+
+....
+/*
+ * animation as a marquee
+ */
+#marquee {
+	position: fixed;
+	height: 1.2em;
+	left: 0;
+	right:0;
+	bottom: 0rem;
+	background: rgba(128,128,128,0.5);
+	}
+
+#marquee span:only-child {
+    animation: marquee 100s linear 0s infinite ;
+    position: relative; 
+	word-break: break-all;
+	display: block;
+	height: 1.2em;
+	max-he1ght: 1.2em;
+	font-family: "Courier New", Courier, monospace;
+	/* width: calc(1ch * 462); */
+	width: -webkit-max-content;
+	overflow: visible;
+	border-right: black thin solid;
+}
+
+/* Standard syntax */
+@keyframes marquee {
+      0%   {left: 100%;}
+    100% { left: calc(-1 * 1ch * 462); }
+}
+
+<!-- content to be placed inside <body>…</body> -->
+<aside id="marquee"><span>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language. 
+While most often used to style web pages and user interfaces written in HTML and XHTML, the language can be applied to any kind of XML document, including plain XML, SVG and XUL.
+ CSS is a cornerstone specification of the web, and almost all web pages use CSS style sheets to describe their presentation. [wikipedia]</span></aside>
+ 
+ ...
+ /**
+ * justify-content
+ */
+div#start 	{ 	justify-content: flex-start; 	}
+div#end 	{ 	justify-content: flex-end; 	}
+div#center  { 	justify-content: center; 	}
+div#between { 	justify-content: space-between; 	}
+div#around  { 	justify-content: space-around; 	}
+
+div#around:hover {justify-content: flex-start;}
+
+div[id] {
+	display: flex;
+	margin-bottom: 1rem;
+	border: black thin solid;
+	background: lightgray;
+	padding: 0.1rem;
+/* try with */
+/*	direction: rtl; */
+}
+
+div[id] span {
+	flex-basis: 25%;
+	background: lightgreen;
+	border: black thin solid;
+	margin: 0.1rem;
+	text-align: center;
+}
+
+<div id="start"><span>1</span><span>2</span><span>3</span></div>
+<div id="end"><span>1</span><span>2</span><span>3</span></div>
+<div id="center"><span>1</span><span>2</span><span>3</span></div>
+<div id="between"><span>1</span><span>2</span><span>3</span></div>
+<div id="around"><span>1</span><span>2</span><span>3</span></div>
+
+... login helt til høyre
+ nav > ul > li:nth-child(4) {
+	/* change the number for 1, 2, 3 or 4  to see 1, 2, 3 or 4 li on the right */ 
+  margin-left: auto;
+}
+nav { 	background: lightgray; margin-top: 5rem;}
+nav > ul {
+  display: flex;
+  padding: 0;
+}
+nav > ul > li {
+  padding: 0 1rem 0 0;
+  list-style: none;
+}
+
+nav > ul > li:last-child {
+	padding: 0;
+} 		
+
+<nav>
+  <ul>
+<li><a href="#about">About</a>
+<li><a href="#projects">Projects</a>
+<li><a href="#interact">Interact</a>
+<li><a href="#log">Login</a>
+  </ul>
+</nav>
+...
+/*
+ * flex et flex-basis
+ */
+
+section {
+	display: flex;
+	border: black thin solid;
+	border-radius: 1rem;
+	flex-wrap: wrap;
+}
+
+article {
+	border: red thin solid;
+	border-radius: 1rem;
+	padding: 1rem; 
+	flex-grow: 1; /* article can grow */
+	/*	flex-basis: 0; */ /* on line 1 (1st, 2de, 3rd) with basis to 0, same size.... */
+	/* change the texte of article to better see the effect */<section>
+	<article>first article first article first article first article first article first article</article>
+	<article>second article second article</article>
+	<article>third article third article third article third article third article</article>
+	<article>fourth article</article>
+	<article>fifth article</article>
+	<article>sixth article</article>
+	<article>seventh article</article>
+	<article>eighth article</article>
+</section>
+
+....snaks solveig
+/*
+ * flex & flex-grow
+ */
+
+section {
+	display: flex;
+	border: black thin solid;
+	border-radius: 1rem;
+	flex-direction: row-reverse; 
+	/* for flex-wrap, let resize your browser window */
+	flex-wrap: wrap-reverse;
+}
+
+article {
+	margin: 1rem;
+	border: red thin solid;
+	border-radius: 1rem;
+	padding: 1rem; 
+	flex-grow: 1; /* article can grow */
+}
+
+article:nth-child(2) { order: 2; flex-grow: 0; /* the second one cannot grow */ } 
+article:nth-child(4) { order: -1; flex-grow: 3; /* the fourth one can grow three time more than the other */  }
+
+<section>
+	<article>first article</article>
+	<article>second article</article>
+	<article>third article</article>
+	<article>fourth article</article>
+	<article>fifth article</article>
+	<article>sixth article</article>
+	<article>seventh article</article>
+	<article>eighth article</article>
+</section>
+
+
+...
+/*
+ * flex & order
+ */
+
+section {
+	display: flex;
+	border: black thin solid;
+	border-radius: 1rem;
+	flex-direction: row-reverse; 
+	/* for flex-wrap, let resize your browser window */
+	flex-wrap: wrap-reverse;
+}
+
+article {
+	margin: 1rem;
+	border: red thin solid;
+	border-radius: 1rem;
+	padding: 1rem; 
+}
+
+article:nth-child(2) { order: 2;} 
+article:nth-child(4) { order: -1;}
+
+
+...nannam solveig
+nav {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	height: 7rem;
+	display: flex;
+	border-bottom: black thick solid;
+}
+
+ul#nav {
+	display: flex;
+	list-style: none;
+}
+
+ul#nav li{
+	/* width: 4rem; */
+	flex-grow: 1;
+	flex-basis: 0;
+	border: blue thin solid;}
+
+ul#nav img {
+	height: 5rem;
+	height: -webkit-fill-available; 
+		height: -moz-fill-available;  /* non implem */
+}
+
+ ul#info {
+  	margin-left:auto;
+
+ 	display: flex;
+ 	flex-direction: column;
+ 	list-style: none;
+ }
+ 
+ 
+ 
+ ul#info li{
+	/* width: 4rem; */
+	text-align: right;
+	flex-grow: 1;
+	flex-basis: 0;
+	border: blue thin solid;}
+ 
+  ul#info img {
+  	width: 6ex; 
+  }
+  
+section {
+	position: fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	top: 7rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 0.5rem 0;
+}
+
+article {
+	box-shadow: 0.5rem 0.5rem;
+	border-radius: 1rem;
+	padding: 1rem;
+	border: black thin solid;
+	margin-bottom: 1rem; 
+	margin-right: 1rem;  
+	}
+
+article#contact {
+	flex-basis: calc(100% - 1rem);
+}
+
+article:not(#contact) {
+	flex-basis: calc(50% - 2rem - 1rem - 2px);
+}	
+
+article:nth-child(2n+3), article#in, article#stat{
+	order: 2;
+}
+
+article#compose {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+article#compose > span {
+	border: black 1px solid;
+	flex-basis: calc(33% - 2px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Exo layout 2.1</title>
+
+<style type="text/css">
+
+</style>
+
+<link rel="stylesheet" href="exo2.1.css"  media="screen" />
+
+</head>
+
+<body>
+
+
+<nav>
+	<ul id="nav">
+		<li><a href="#home"><img alt="home" src="http://www.i3s.unice.fr/~renevier/css/home.png" /></a></li>
+		<li><a href="#maps"><img alt="maps" src="http://www.i3s.unice.fr/~renevier/css/maps.png" /></a></li>
+		<li class="here"><a href="#phone"><img alt="phone" src="http://www.i3s.unice.fr/~renevier/css/phone.png" /></a></li>
+		<li><a href="#music"><img alt="music" src="http://www.i3s.unice.fr/~renevier/css/music.jpg" /></a></li>
+		<li><a href="#fans"><img alt="fans" src="http://www.i3s.unice.fr/~renevier/css/fans.png" /></a></li>
+	</ul>
+	
+	<ul id="info">
+		<li>13:15</li>
+		<li>22°</li>
+		<li><img alt="status" src="http://www.i3s.unice.fr/~renevier/css/jauge.png" /></li>
+	</ul>
+</nav>
+
+<section>
+	<article id="contact">
+	contacts
+	</article>
+	
+	<article id="out">
+	outcome calls
+	</article>
+	
+	<article id="in">
+	incoming calls
+	</article>
+	
+	<article id="compose">
+	<span>7</span>	<span>8</span>	<span>9</span>
+	<span>4</span>	<span>5</span>	<span>6</span>
+	<span>1</span>	<span>2</span>	<span>3</span>
+	<span>*</span>	<span>0</span>	<span>#</span>
+	</article>
+	
+	<article id="stat">
+	phone information
+	</article>
+</section>
+	
+</body>
+
+</html>
+}
+
+article:nth-child(2) { flex-basis: 0; /* its size is what it gain by growing */ } 
+article:nth-child(4) { flex-basis: 100%; /* as tall as the container => new lines... */  }
+
+.... hmm solveig
+/**
+ * position
+ */
+
+nav#menu {
+position: fixed;
+/* change here top, left, bottom, right, and values... */
+top: 0;
+left: 0;
+width: 15rem;
+height: 13rem;
+border: red thin solid;
+}
+
+nav#menu > * {
+	position: absolute;
+	}
+	
+nav#menu > p:first-child {
+/* change here top, left, bottom, right, and values... */
+	top: 0;
+	left: 0:
+}
+
+nav#menu > p:first-child + p {
+/* change here top, left, bottom, right, and values... */
+	right: 0;
+	bottom: 0;
+}
+	
+body {
+	margin-left: 16rem;
+	padding-left: 0.5rem;
+	border-left: thin gray solid;
+	}
+	
+	
+	<nav id="menu">
+<p>
+probably a menu <br />
+with links<br />
+etc. </p>
+<p>
+and another line...
+</p>
+</nav>
+<p> a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+	a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+</p>
+
+<p> a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+	a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+</p>
+<p> a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+	a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+</p>
+
+<p> a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+	a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+</p>
+
+<p> a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... a paragraph...  a paragraph...  a paragraph...  a paragraph...  a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+	a paragraph... <br />
+	over several lines <br />
+	to fill the page... <br />
+</p>
+...
+mobil ? /**
+ * example about using display
+ */
+ 
+ li {
+ 	/* add display: block; */
+ 	margin: 0 1rem 1rem;
+ 	border: blue thin solid;
+ 	/* add float : left; */ 
+ }
+ 
+ nav, nav ~ * {
+	display: inline-block;
+ 	border: black thin solid;
+ 	margin: 0 1rem; 
+ 	vertical-align: top;
+ }
+<nav><ul>
+<li><a href="#toto">a first link</a></li>
+<li><a href="#tutu">a second link</a></li>
+</ul></nav>
+<section id="toto">
+	<article>A first article in toto</article>
+	<article>A second article in toto</article>
+</section>
+<section id="tutu">
+	<article>A first article in tutu</article>
+	<article>A second article in tutu</article>
+	<article>A third article in tutu</article>
+</section>
+..... 
+tabell ting skal være under hverande solveig
+<table id="keywords" >
+		<thead>
+			<tr>
+				<th colspan="2">
+				keywords
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td ><strong>Teaching</strong></td>
+				<td>
+				Software Engineering; Web; HCI<br />
+				<em>technologies:</em> <samp>UML; Design Pattern; java; html; css; php; javascript; Android</samp>
+				</td>
+			</tr>
+			<tr>
+				<td ><strong>Administration</strong></td>
+				<td>
+				Coordination (Licence MIAGE - undergraduate) ; CNU 
+				</td>
+			</tr>			
+			<tr>
+				<td><strong>Research</strong></td>
+				<td>
+				 HCI; Composition and Adaptation Models;   Adaptation Consistency at design-time and run-time; Interactive Systems Architecture<br />
+				<em>technologies:</em> <samp>OntoCompo, Alias, Fractal (Julia), Semantic (Corese, OWL, RDF, ...), Android</samp>
+				</td>
+			</tr>
+		</tbody>
+</table>
+
+
+... float solveig
+/**
+ * float
+ */
+
+body {  /* change the width of the web page... */
+width: 50rem; border: black thin solid;
+/* see also with miltiple columns */
+/* column-count: 2; */
+}
+
+p {
+/* to be commented to see margin effect */
+margin: 0;
+text-align: parent-match;
+}
+
+hr {
+			clear: both;
+}
+
+p.right {
+	float: right;
+	border: red thin solid;
+	width: 15rem;
+	height: 5rem;
+	margin-left: 1rem;
+}
+
+p.top{
+	float: top; /* not yet */
+	border: red thin solid;
+	width: 15rem;
+	height: 5rem;
+	margin: 1rem;
+	z-index: 10;
+}
+
+
+p.left{
+	float: left;
+	border: blue thin solid;
+	width: 15rem;
+	height: 15rem;
+		margin-right: 1rem;
+}
+<p class="right">On the right</p>
+<p class="left">On the left</p>
+<p class="top">On the top</p>
+
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... 
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...</p>
+<hr />
+<p class="left">On the left</p>
+<p class="right">On the right</p>
+<p class="right">On the right</p>
+
+<p>du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... 
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...</p>
+<hr />
+<p class="left">On the left</p>
+<p>du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... 
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...</p>
+<p class="right">On the right</p>
+<hr />
+<p>du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... 
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...</p>
+<p class="left">On the left</p>
+<p class="right">On the right</p>
+<hr />
+<p>du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... 
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...
+du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut... du texte pour remplir, car il en faut...</p>
+<p class="right">On the right</p>
+<p class="left">On the left</p>
+<hr />
+...
+
+solveig
+/**
+ * margin
+ */
+
+p {
+	border: blue thin solid;
+	transition: all 1s;
+	margin: 1rem;
+	/* 10% of the width of the windows is used as internal margin at the top and the bottom, no margin on the left and right sides */
+}
+
+p:hover {
+	padding:0;
+	width: 33%;
+	margin: auto;
+}
+<p>This is a paragraph</p>
+<p>This is another paragraph</p>
+...
+/**
+ * padding
+ */
+
+p {
+	border: blue thin solid;
+	transition: all 1s;
+	padding: 5% 0;
+	/* 10% of the width of the windows is used as internal margin at the top and the bottom, no margin on the left and right sides */
+}
+
+p:hover {
+	padding:0;;
+}
+.....
+/**
+ * padding
+ */
+
+p {
+	border: blue thin solid;
+	padding: 0;
+}
+p:hover {
+	padding: 100%;
+}
+....
+p  {
+	border: 10px solid;
+	border-image: linear-gradient(to right, red, blue) 1;
+	/* border-image-source: url("http://www.i3s.unice.fr/~renevier/philippe2.png"); */
+	}
+	..
+	p  {
+	border: dotted;
+}
+......... solveig
+/** 
+ * background-position
+ */
+
+div.top {
+	background-image: url("http://www.w3.org/Icons/w3c_home");
+	background-repeat: no-repeat;
+	border: black thin solid;
+}
+
+div.one {
+		background-position: left;
+}
+
+div.two {
+		background-position: right bottom;
+}
+
+div.three {
+		background-position: 33% 66%;
+}
+<p>Background images are no-repeat to easily see it</p>
+<p>first: left for horizontal (and center by default for vertical) </p>
+<div class='top one'>
+    an text<br />on several<br />lines<br />to fill a little<br /> the div</div>
+</div>
+<p>secondly: right for horizontal and bottom for vertical</p>
+<div class='top two'>
+    an text<br />on several<br />lines<br />to fill a little<br /> the div</div>
+</div>
+<p>thirdly: 
+<br /> => 33% (the vertical at a first third of the width of the element coincide with the first third of the image) for horizontal 
+<br /> => 66% (the horintal at the second third of the height of the element coincide with the second third of the image)for vertical</p>
+<div class='top three'>
+    an text<br />on several<br />lines<br />to fill a little<br /> the div</div>
+</div>
+
+... first swcond .. 
+/**
+ * element with several CSS classes
+ */
+
+p.first {
+	background: gray;
+	}
+	
+p.second {
+	font-weight: bold;
+}
+<!-- content to be placed inside <body>…</body> -->
+<p class="first">A paragraph of the class "first"</p>
+<p class="second">A paragraph of the class "first"</p>
+<p class="first second">A paragraph of the class "first" and of the class second</p>
+<p class="first second" id="anId">A paragraph for illustrating the combinaison of seletors</p>
+....
+/**
+ * 01 - first css rules
+ */
+
+h1 {
+		text-align: center;
+		}
+	
+article {
+		background-color: rgba(224,224,224,0.5);
+		box-shadow: 0.2em 0.2em black;
+		}
+		
+		
+
+section  * {
+		margin-bottom: 1.2em;
+		}
+	...
+	
+	 ...
+	 background-color_image url er ralativt til stylesheet ../img/bilde
+	 
+	  http://stackoverflow.com/questions/9734260/image-button-with-html5
+
+	
+
+
+

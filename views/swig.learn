@@ -1,0 +1,3 @@
+  {% set psi_id = "anything!" %}
+  her er psi_id {{psi_id}}
+  

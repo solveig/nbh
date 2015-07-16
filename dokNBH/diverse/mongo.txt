@@ -1,0 +1,316 @@
+************24 mars 2015
+
+
+
+
+MMS Reset Password
+
+A password reset event has been triggered. The password reset window is limited to two hours.
+
+If you do not reset your password within two hours, you will need to submit a new request.
+
+To complete the password reset process, visit the following link:
+
+https://mms.mongodb.com/user/reset/password/2ca4b3dc30cb6b621e5ce7667808b7dc
+
+Username	solveig@bedredata.no
+IP Address	85.164.111.181
+Created	2015/03/24 20:35 GMT
+
+passord heltRett
+
+
+
+ 
+https://education.mongodb.com/?next=/courses/10gen/M101JS/2013_August/courseware/
+kurs https://education.10gen.com/courses/10gen/M101JS/2013_August/courseware/
+
+https://education.10gen.com/ 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
+solveig@bedredata.no																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
+gressklipper																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
+
+LAge en database skrive USE PSI2013, hvis den ikke fins blir den laget																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
+
+
+Mongo er navnet på klient-programmet, som er et kraftig javascript-skall som også brukes til administrative oppgaver.
+Mongod er navnet på databaseserver-programmet (som kjøres som en daemon)
+f
+Mongo bruker gruppe Norge http://www.meetup.com/Norway-MongoDB-User-Group/events/109846472/   passorg 1trenger
+
+mongo
+database
+PSI-gruppen
+bruker sjef
+passord frikk2
+
+Connect directly to your database, copy external database, copy MongoHQ database, or create a collection.
+
+Mongo Console
+mongo dharma.mongohq.com:10088/PSI-gruppen -u <user> -p<password>
+Mongo URI
+mongodb://<user>:<password>@dharma.mongohq.com:10088/PSI-gruppen
+
+
+
+...
+mongohq
+solveig@bedredata.no passord katter1     api token 5f9dlneauxjdw9zeqs3e
+
+
+https://www.youtube.com/watch?feature=player_embedded&v=SLH6fujRYB8
+https://twitter.com/nodejs
+http://nodejs.org/
+http://archive.xmlprague.cz/2013/files/xmlprague-2013-proceedings.pdf
+
+
+...
+mongodb://<sjef>:<frikk2>@dharma.mongohq.com:10088/PSI-gruppen
+
+mongo dharma.mongohq.com:10088/PSI-gruppen -u <sjef> -p<frikk2>
+
+C:\mongodb\bin>mongo
+MongoDB shell version: 2.4.5
+connecting to: test
+Wed Jul 31 11:45:27.437 JavaScript execution failed: Error: couldn't connect to
+server 127.0.0.1:27017 at src/mongo/shell/mongo.js:L112
+exception: connect failed
+
+You also get this error if you've changed the default port for mongoDB in /etc/mongo.conf
+
+To connect via the shell in this case use:-
+
+$mongo 127.0.0.1:your_new_port_number
+
+OR
+
+$mongo -u -p --host --port your_new_port_number
+
+from MongoDB docs
+
+mongohq bruker solveig@bedredata.no passord katter1
+
+
+find({?}).limit(10)
+...profiler
+db.setProfilingLevel(1, 100);
+
+// Will profile all queries
+db.setProfilingLevel(2);
+
+// Will disable the profiler
+db.setProfilingLevel(0);
+The profiler saves all the profile data into the capped collection system.profile. This is just like any other collection so you can run some queries on it, for example
+
+// Find the most recent profile entries
+db.system.profile.find().sort({$natural:-1});
+    
+// Find all queries that took more than 5ms
+db.system.profile.find( { millis : { $gt : 5 } } );
+    
+// Find only the slowest queries
+db.system.profile.find().sort({millis:-1});
+....
+
+bra kommandoer
+db.currentOp() - shows you all currently running operations
+db.killOp(opid) - lets you kill long running queries
+db.serverStatus() - shows you stats for the entire server, very useful for monitoring
+db.stats() - shows you stats for the selected db
+db.collection.stats() - stats for the specified collection
+....
+mongotop - shows how much time was spend reading or writing each collection over the last second
+mongostat - brilliant live debug tool, gives a view on all your connected MongoDB instances
+Monitoring frontends
+
+MMS - 10gen’s hosted mongo monitoring service. Good starting point.
+
+Kibana - Logstash frontend. Trend analysis for Mongo logs. Pretty useful for good visibility.
+...
+
+
+---
+MongoDB Management Service
+---
+In this example, mongoimport imports the csv formatted data in the /opt/backups/contacts.csv into
+ the collection contacts in the users database on the MongoDB instance running on the localhost
+  port numbered 27017.
+
+
+mongoimport --db users --collection henvisninger --type csv --file /lage/psi/henvisninger.csv
+
+db.createCollection("log", { capped : true, size : 5242880, max : 5000 } )
+
+ruby 2.0.0p195 (2013-05-14) [i386-mingw32]
+
+C:\Users\solveig>cd ..
+
+C:\Users>cd ..
+
+C:\>cd mongodb
+
+C:\mongodb>cd bin
+
+C:\mongodb\bin>mongo
+MongoDB shell version: 2.4.5
+connecting to: test
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+> mongoimport --db sjef --collection henvisninger --type csv --file /lage/psi/he
+nvisninger.csv
+Wed Jul 31 15:07:36.793 JavaScript execution failed: SyntaxError: Unexpected ide
+ntifier
+> show dbs
+local   0.078125GB
+
+
+> db.createCollection("henvisninger")
+{ "ok" : 1 }
+
+> behandler={brukernavn:'ev',epost:'senere',fornavn:'eva',antall:3}
+{
+        "brukernavn" : "ev",
+        "epost" : "senere",
+        "fornavn" : "eva",
+        "antall" : 3
+}
+> db.henvisninger.insert(behandler)
+> db.henvisninger.findone()
+Wed Jul 31 16:17:23.087 JavaScript execution failed: TypeError: Property 'findon
+e' of object test.henvisninger is not a function
+> db.henvisninger.findOne()
+{
+        "_id" : ObjectId("51f91c51823e717836d81a1d"),
+        "brukernavn" : "ev",
+        "epost" : "senere",
+        "fornavn" : "eva",
+        "antall" : 3
+}
+
+
+BINGO
+> show dbs
+local   0.078125GB
+test    0.203125GB
+> show collections
+henvisninger
+system.indexes
+> exit
+bye
+
+C:\mongodb\bin>mongoimport
+connected to: 127.0.0.1
+no collection specified!
+Import CSV, TSV or JSON data into MongoDB.
+
+When importing JSON documents, each document must be a separate line of the inpu
+t file.
+
+Example:
+  mongoimport --host myhost --db my_cms --collection docs < mydocfile.json
+
+options:
+  --help                                produce help message
+  -v [ --verbose ]                      be more verbose (include multiple times
+                                        for more verbosity e.g. -vvvvv)
+  --version                             print the program's version and exit
+  -h [ --host ] arg                     mongo host to connect to ( <set
+                                        name>/s1,s2 for sets)
+  --port arg                            server port. Can also use --host
+                                        hostname:port
+  --ipv6                                enable IPv6 support (disabled by
+                                        default)
+  -u [ --username ] arg                 username
+  -p [ --password ] arg                 password
+  --authenticationDatabase arg          user source (defaults to dbname)
+  --authenticationMechanism arg (=MONGODB-CR)
+                                        authentication mechanism
+  --dbpath arg                          directly access mongod database files
+                                        in the given path, instead of
+                                        connecting to a mongod  server - needs
+                                        to lock the data directory, so cannot
+                                        be used if a mongod is currently
+                                        accessing the same path
+  --directoryperdb                      each db is in a separate directly
+                                        (relevant only if dbpath specified)
+  --journal                             enable journaling (relevant only if
+                                        dbpath specified)
+  -d [ --db ] arg                       database to use
+  -c [ --collection ] arg               collection to use (some commands)
+  -f [ --fields ] arg                   comma separated list of field names
+                                        e.g. -f name,age
+  --fieldFile arg                       file with fields names - 1 per line
+  --ignoreBlanks                        if given, empty fields in csv and tsv
+                                        will be ignored
+  --type arg                            type of file to import.  default: json
+                                        (json,csv,tsv)
+  --file arg                            file to import from; if not specified
+                                        stdin is used
+  --drop                                drop collection first
+  --headerline                          first line in input file is a header
+                                        (CSV and TSV only)
+  --upsert                              insert or update objects that already
+                                        exist
+  --upsertFields arg                    comma-separated fields for the query
+                                        part of the upsert. You should make
+                                        sure this is indexed
+  --stopOnError                         stop importing at first error rather
+                                        than continuing
+  --jsonArray                           load a json array, not one item per
+                                        line. Currently limited to 16MB.
+h
+C:\mongodb\bin>mongoimport --db psi --collection henvisninger --type csv --headerline <henvisning9.csv
+connected to: 127.0.0.1
+Thu Aug 01 00:15:53.399 exception:Invalid UTF8 character detected
+Thu Aug 01 00:15:53.400
+Thu Aug 01 00:15:53.400 exception:Invalid UTF8 character detected
+Thu Aug 01 00:15:53.401
+Thu Aug 01 00:15:53.401 exception:Invalid UTF8 character detected
+Thu Aug 01 00:15:53.401
+Thu Aug 01 00:15:53.413 exception:Invalid UTF8 character detected
+Thu Aug 01 00:15:53.413
+Thu Aug 01 00:15:53.414 exception:Invalid UTF8 character detected
+Thu Aug 01 00:15:53.414
+Thu Aug 01 00:15:53.415 imported 5 objects
+Thu Aug 01 00:15:53.415 ERROR: encountered 5 error(s)s
+
+mongo /localhost/psi
+db.henvisninger.find()   det gir 10010 nye skriv it
+
+db.henvisninger.find().limit(3).toArray()
+
+...........
+rekommanderer etter kurset BØKER. de mongodbJS.learn
+
+
+triks nesta arrrays
+db.foo.save({_id: 1, a1:[{_a1id:1, a2:[{a2id:1, a3:[{a3id:1, a4:"data"}]}]}]})
+db.foo.find()
+{ "_id" : 1, "a1" : [
+{ "_a1id" : 1, "a2" : [
+{ "a2id" : 1, "a3" : [
+{ "a3id" : 1, "a4" : "data" }
+] }
+] }
+] }
+
+db.foo.update({_id:1}, {$push:{"a1.0.a2.0.a3":{a3id:2, a4:"other data"}}})
+db.foo.find()
+{ "_id" : 1, "a1" : [
+{ "_a1id" : 1, "a2" : [
+{ "a2id" : 1, "a3" : [
+{ "a3id" : 1, "a4" : "data" }, { "a3id" : 2, "a4" :
+"other data" }
+] }
+] }
+] }
+If you are unsure where one of your sub-documents lies within an array, you may use one positional operator, and Mongo will update the first sub-document which matches. For example:
+
+db.foo.update({_id:1, "a1.a2.a2id":1}, {$push:{"a1.0.a2.$.a3":{a3id:2, a4:"other 
+
+
+
+mmsi

@@ -1,0 +1,57 @@
+﻿db.crm.aggregate([{$match:{ contact: 'kari','clients.history.status': { '$nin': ['Kommentar'] },
+'clients.history.arkiv': true } } , { $project: { _id: 0, signature:1, clients.history:1 } } , feil
+{ $unwind: '$clients' } , { $unwind: '$clients.history' } ,
+ { $sort: { 'clients.psi_id': 1, 'clients.history.toDay': 1 } } ])
+ 
+ok 
+db.crm.aggregate([{$match:{ contact: 'kari','clients.history.status': { '$nin': ['Kommentar'] },
+'clients.history.arkiv': true } } , { $project: { _id: 0, signature:1, clients:1 } } , 
+{ $unwind: '$clients' } , { $unwind: '$clients.history' } ,
+ { $sort: { 'clients.psi_id': 1, 'clients.history.toDay': 1 } } ])
+ 
+ 
+db.crm.drop(); 
+db.crm.insert ({"contact": "kari","signature": "Kari Karlsen","clients" : []})
+
+db.crm.update ({"contact":"kari"},
+                       {$addToSet : 
+                       	{"clients" : {"psi_id"        : 0,  	        
+                        "history"       : [{ 
+                        	"psi_id" : 0,
+                        	"arkiv"        : true,
+  	                      "status"       : "ny",
+  	                       toDay : new Date()                 
+                         }]}}});
+ db.crm.update ({"contact":"kari"},
+                       {$addToSet : {"clients" : {"psi_id"        : 1,  	                                 
+                        "history"       : [{ 
+                        	"psi_id" : 1, 
+                       	  "arkiv"        : false,
+  	                      "status"       : "Syk",
+  	                    toDay : new Date()                                   
+                        }]}}});
+
+db.crm.update ({"contact":"kari"},
+                       {$addToSet : {"clients" : {"psi_id"        : 3,  	                                 
+                        "history"       : [{ 
+                        	"psi_id" : 3,  
+                       	"arkiv"        : true,
+  	                      "status"       : "Syk",
+  	                      toDay : new Date()                    
+                        }]}}});
+db.crm.update ({"contact":"ole"},
+                       {$addToSet : {"clients" : {"psi_id"        : 4,  	                               
+                        "history"       : [{  
+                        	"psi_id" : 4, 
+                       	  "arkiv"        : false,
+  	                      "status"       : "Inkluderes" ,
+  	                      toDay : new Date()                   
+                        }]}}});
+db.crm.update ({"contact":"kari"},
+                       {$addToSet : {"clients" : {"psi_id"        : 5,  	                                
+                       "history"       : [{ 
+                        	"psi_id" :5 ,  
+                       	 "arkiv"        : true,
+  	                      "status"       : "Inkluderes" ,
+  	                      toDay : new Date()                   
+                        }]}}});

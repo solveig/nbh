@@ -1,0 +1,62 @@
+logo Ny Blå Himmel Ny observasjon Lokalisering  kommentar Arkiverte observasjoner hjelUnderp logg ut
+Fylles ut av kari
+id nr 
+dato klokke
+Lokalisering default velge andre lokaliseringer  nytt få lokalisering opp
+klikke striper fra fly-antall KONDENSSKy-antall ,antall fly,
+ krysses av mye skyer, ingen skyer
+fly uten striper samtidig
+danner det større sky
+varighet timer min ,forsvant det ut av synsfeltet?
+hvis de vet...
+Hastighet , høyde, retning ...
+Kommentar
+Registrert fra flihtradar24ja skriv inn kodene (sjekke om går
+flyselskap
+Bilder, kommentar 
+filmer kommentar
+
+Lagre (ikke helt ferdig, skal legge til mer),LAgre og Avslutte 
+
+definere 
+label svar tekst radio velge en velge flere tall dato klokkeslett gruppenavn prioritet 1,10 mer enn 10 nytt gruppenavn
+logo
+logotekst
+bakgrunnsfarge
+author
+copyright
+meny,label,tekst,font
+fontsize
+knapper
+
+norsk engel
+
+
+
+arkiverte dato klokke plass endre 
+Lokalisering norge fylke by adresse geo koordinater,kaller det navn
+ 
+ user navn,Lokalisering
+ 
+ Ny Blå Himmel fylles ut av kari copyright...link til min mailadrresse/hjemmeide
+ 
+ 
+ 
+ kjøre psi crm i heroku ?
+kjøre openshift
+
+Docker https://docs.docker.com/examples/mongodb/
+
+1uten skjerm var psi-crm lyseblå hva skjer a bruk lightblue eller ... på psi, bakgrunn nbh = royalblue. Funka
+
+
+prioritet
+2. få kjørt psi-crm lokalt ...
+x3 lage logo svg,ok
+4. legge inn logo, teste, bakgrunnsfarge teste, skybokser,
+x1. sjekke angular,gjort bruker ikke
+4, lage datamodell i generell form
+
+5.lage versjon fra nbhKrav
+x1. sjekke knapp med sky ok
+ 
