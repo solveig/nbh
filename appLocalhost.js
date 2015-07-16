@@ -7,8 +7,8 @@ var  express = require('express')
     app.use(express.static(__dirname + '/public'));
 
 
-//2015 MongoClient.connect('mongodb://localhost:27017/psi', function(err, db) {	
-MongoClient.connect('mongodb://psi-heroku:bollersaftogburritos@paulo.mongohq.com:10015/psi', function(err, db) {
+//2015 MongoClient.connect('mongodb://psi-heroku:bollersaftogburritos@paulo.mongohq.com:10015/psi', function(err, db) {
+ MongoClient.connect('mongodb://localhost:27017/psi', function(err, db) {	
     "use strict";
     if(err) throw err;
 

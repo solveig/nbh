@@ -312,3 +312,120 @@ git init ... det blir laget en .git fil
 .gitignore legge tile node_modules  (pga windows ikke håndterer lange filnavn)
 git add .
 git status 
+git commit -m "Add files"
+branch master...
+github
+https://github.com/solveig/nbh.git får du når create repository på github.com bruker:solveig/gregorine1
+git remote add origin https://github.com/solveig/nbh.git
+git push -u origin master ... Da kommer det på Github,kun lagring
+
+herokuapp.com solveig 1Gregorine
+cd nbh
+heroku login
+
+heroku create
+git push heroku master
+heroku open ps:scale web=1
+heroku open
+heroku logs
+heroku ps feil
+
+git push -u heroku master ... da kommer det i produksjonsbasen
+
+
+....feil
+C:\nbh>heroku logs
+2015-07-16T12:31:25.271924+00:00 heroku[api]: Enable Logplex by solveig@bedredat
+a.no
+2015-07-16T12:31:25.271924+00:00 heroku[api]: Release v2 created by solveig@bedr
+edata.no
+2015-07-16T12:33:55.661986+00:00 heroku[slug-compiler]: Slug compilation started
+
+2015-07-16T12:33:55.662005+00:00 heroku[slug-compiler]: Slug compilation finishe
+d
+2015-07-16T12:33:55.575194+00:00 heroku[api]: Scale to web=1 by solveig@bedredat
+a.no
+2015-07-16T12:33:55.617060+00:00 heroku[api]: Deploy 49f6fe0 by solveig@bedredat
+a.no
+2015-07-16T12:33:55.617060+00:00 heroku[api]: Release v3 created by solveig@bedr
+edata.no
+2015-07-16T12:33:58.088080+00:00 heroku[web.1]: Starting process with command `n
+ode app.js`
+2015-07-16T12:34:00.233381+00:00 app[web.1]: Detected 512 MB available memory, 5
+12 MB limit per process (WEB_MEMORY)
+2015-07-16T12:34:00.233441+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-07-16T12:34:00.602699+00:00 app[web.1]: /app/node_modules/mongodb/lib/mongo
+db/mongo_client.js:378
+2015-07-16T12:34:00.602493+00:00 app[web.1]:
+2015-07-16T12:34:00.603307+00:00 app[web.1]:                 ^
+2015-07-16T12:34:00.603047+00:00 app[web.1]:           throw err
+2015-07-16T12:34:00.605152+00:00 app[web.1]:     at emit (events.js:106:17)
+2015-07-16T12:34:00.605150+00:00 app[web.1]:     at null.<anonymous> (/app/node_
+modules/mongodb/lib/mongodb/connection/server.js:553:74)
+2015-07-16T12:34:00.605147+00:00 app[web.1]: Error: failed to connect to [localh
+ost:27017]
+2015-07-16T12:34:00.605155+00:00 app[web.1]:     at null.<anonymous> (/app/node_
+modules/mongodb/lib/mongodb/connection/connection_pool.js:140:15)
+2015-07-16T12:34:00.605157+00:00 app[web.1]:     at emit (events.js:98:17)
+2015-07-16T12:34:00.605158+00:00 app[web.1]:     at Socket.<anonymous> (/app/nod
+e_modules/mongodb/lib/mongodb/connection/connection.js:512:10)
+2015-07-16T12:34:00.605159+00:00 app[web.1]:     at Socket.emit (events.js:95:17
+)
+2015-07-16T12:34:00.605161+00:00 app[web.1]:     at net.js:441:14
+2015-07-16T12:34:00.605163+00:00 app[web.1]:     at process._tickCallback (node.
+js:448:13)
+2015-07-16T12:34:01.418579+00:00 heroku[web.1]: State changed from starting to c
+rashed
+2015-07-16T12:34:01.419954+00:00 heroku[web.1]: State changed from crashed to st
+arting
+2015-07-16T12:34:01.405494+00:00 heroku[web.1]: Process exited with status 8
+2015-07-16T12:34:03.004775+00:00 heroku[web.1]: Starting process with command `n
+ode app.js`
+2015-07-16T12:34:04.241165+00:00 app[web.1]: Detected 512 MB available memory, 5
+12 MB limit per process (WEB_MEMORY)
+2015-07-16T12:34:04.241184+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-07-16T12:34:04.570514+00:00 app[web.1]:
+2015-07-16T12:34:04.570599+00:00 app[web.1]: /app/node_modules/mongodb/lib/mongo
+db/mongo_client.js:378
+2015-07-16T12:34:04.570858+00:00 app[web.1]:                 ^
+2015-07-16T12:34:04.570828+00:00 app[web.1]:           throw err
+2015-07-16T12:34:04.572600+00:00 app[web.1]:     at null.<anonymous> (/app/node_
+modules/mongodb/lib/mongodb/connection/server.js:553:74)
+2015-07-16T12:34:04.572597+00:00 app[web.1]: Error: failed to connect to [localh
+ost:27017]
+2015-07-16T12:34:04.572601+00:00 app[web.1]:     at emit (events.js:106:17)
+2015-07-16T12:34:04.572603+00:00 app[web.1]:     at null.<anonymous> (/app/node_
+modules/mongodb/lib/mongodb/connection/connection_pool.js:140:15)
+2015-07-16T12:34:04.572604+00:00 app[web.1]:     at emit (events.js:98:17)
+2015-07-16T12:34:04.572605+00:00 app[web.1]:     at Socket.<anonymous> (/app/nod
+e_modules/mongodb/lib/mongodb/connection/connection.js:512:10)
+2015-07-16T12:34:04.572607+00:00 app[web.1]:     at net.js:441:14
+2015-07-16T12:34:04.572606+00:00 app[web.1]:     at Socket.emit (events.js:95:17
+)
+2015-07-16T12:34:04.572609+00:00 app[web.1]:     at process._tickCallback (node.
+js:448:13)
+2015-07-16T12:34:05.319325+00:00 heroku[web.1]: State changed from starting to c
+rashed
+2015-07-16T12:34:05.306655+00:00 heroku[web.1]: Process exited with status 8
+2015-07-16T12:34:31.119166+00:00 heroku[api]: Scale to web=1 by solveig@bedredat
+a.no
+2015-07-16T12:34:57.921606+00:00 heroku[router]: at=error code=H10 desc="App cra
+shed" method=GET path="/" host=morning-wave-3321.herokuapp.com request_id=665b6d
+77-bf1d-472b-8fe5-25efdae59279 fwd="90.229.209.34" dyno= connect= service= statu
+s=503 bytes=
+2015-07-16T12:34:58.735029+00:00 heroku[router]: at=error code=H10 desc="App cra
+shed" method=GET path="/favicon.ico" host=morning-wave-3321.herokuapp.com reques
+t_id=26be571c-bf43-4801-8523-6efcad633393 fwd="90.229.209.34" dyno= connect= ser
+vice= status=503 bytes=
+2015-07-16T12:35:37.786775+00:00 heroku[router]: at=error code=H10 desc="App cra
+shed" method=GET path="/" host=morning-wave-3321.herokuapp.com request_id=ff5dbf
+8c-3e8c-41ad-b51a-aa8fdeed9dc8 fwd="90.229.209.34" dyno= connect= service= statu
+s=503 bytes=
+2015-07-16T12:35:38.130305+00:00 heroku[router]: at=error code=H10 desc="App cra
+shed" method=GET path="/favicon.ico" host=morning-wave-3321.herokuapp.com reques
+t_id=3bfb95f5-8a88-4f1c-af4d-ff68de89a08c fwd="90.229.209.34" dyno= connect= ser
+vice= status=503 bytes=
+
+C:\nbh>heroku ps
+=== web (Free): `node app.js`
+web.1: crashed 2015/07/16 14:34:04 (~ 4m ago)
